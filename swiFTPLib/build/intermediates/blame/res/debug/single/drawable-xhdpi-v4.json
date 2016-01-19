@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "E:\\Documents\\AndroidStudioProjects\\Sdf\\swiFTPLib\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\launcher.png",
+        "source": "E:\\Documents\\AndroidStudioProjects\\Sdf\\swiFTPLib\\src\\main\\res\\drawable-xhdpi\\launcher.png"
+    },
+    {
+        "merged": "E:\\Documents\\AndroidStudioProjects\\Sdf\\swiFTPLib\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\notification.png",
+        "source": "E:\\Documents\\AndroidStudioProjects\\Sdf\\swiFTPLib\\src\\main\\res\\drawable-xhdpi\\notification.png"
+    }
+]

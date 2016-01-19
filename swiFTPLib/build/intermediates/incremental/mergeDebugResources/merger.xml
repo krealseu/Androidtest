@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config="main$Generated" generated="true"><source path="E:\Documents\AndroidStudioProjects\Sdf\swiFTPLib\src\main\res"/><source path="E:\Documents\AndroidStudioProjects\Sdf\swiFTPLib\build\generated\res\rs\debug"/><source path="E:\Documents\AndroidStudioProjects\Sdf\swiFTPLib\build\generated\res\resValues\debug"/></dataSet><dataSet config="debug$Generated" generated="true"><source path="E:\Documents\AndroidStudioProjects\Sdf\swiFTPLib\src\debug\res"/></dataSet><dataSet config="main" generated-set="main$Generated"><source path="E:\Documents\AndroidStudioProjects\Sdf\swiFTPLib\src\main\res"><file name="notification" path="E:\Documents\AndroidStudioProjects\Sdf\swiFTPLib\src\main\res\drawable\notification.png" qualifiers="" type="drawable"/><file name="widget_off" path="E:\Documents\AndroidStudioProjects\Sdf\swiFTPLib\src\main\res\drawable\widget_off.png" qualifiers="" type="drawable"/><file name="widget_on" path="E:\Documents\AndroidStudioProjects\Sdf\swiFTPLib\src\main\res\drawable\widget_on.png" qualifiers="" type="drawable"/><file name="launcher" path="E:\Documents\AndroidStudioProjects\Sdf\swiFTPLib\src\main\res\drawable-hdpi\launcher.png" qualifiers="hdpi-v4" type="drawable"/><file name="notification" path="E:\Documents\AndroidStudioProjects\Sdf\swiFTPLib\src\main\res\drawable-hdpi\notification.png" qualifiers="hdpi-v4" type="drawable"/><file name="launcher" path="E:\Documents\AndroidStudioProjects\Sdf\swiFTPLib\src\main\res\drawable-mdpi\launcher.png" qualifiers="mdpi-v4" type="drawable"/><file name="notification" path="E:\Documents\AndroidStudioProjects\Sdf\swiFTPLib\src\main\res\drawable-mdpi\notification.png" qualifiers="mdpi-v4" type="drawable"/><file name="launcher" path="E:\Documents\AndroidStudioProjects\Sdf\swiFTPLib\src\main\res\drawable-xhdpi\launcher.png" qualifiers="xhdpi-v4" type="drawable"/><file name="notification" path="E:\Documents\AndroidStudioProjects\Sdf\swiFTPLib\src\main\res\drawable-xhdpi\notification.png" qualifiers="xhdpi-v4" type="drawable"/><file name="launcher" path="E:\Documents\AndroidStudioProjects\Sdf\swiFTPLib\src\main\res\drawable-xxhdpi\launcher.png" qualifiers="xxhdpi-v4" type="drawable"/><file name="notification" path="E:\Documents\AndroidStudioProjects\Sdf\swiFTPLib\src\main\res\drawable-xxhdpi\notification.png" qualifiers="xxhdpi-v4" type="drawable"/><file name="widget_layout" path="E:\Documents\AndroidStudioProjects\Sdf\swiFTPLib\src\main\res\layout\widget_layout.xml" qualifiers="" type="layout"/><file path="E:\Documents\AndroidStudioProjects\Sdf\swiFTPLib\src\main\res\values\defaults.xml" qualifiers=""><string name="allow_anonymous_default" translatable="false">false</string><string name="password_default" translatable="false">ftp</string><string name="wakelock_default" translatable="false">true</string><string name="username_default" translatable="false">ftp</string><string name="show_password_default" translatable="false">false</string><string name="acceptwifi_default" translatable="false">true</string><string name="chroot_default" translatable="false"/><string name="portnumber_default" translatable="false">2121</string></file><file path="E:\Documents\AndroidStudioProjects\Sdf\swiFTPLib\src\main\res\values\strings.xml" qualifiers=""><string name="user_label">User</string><string name="password_validation_error">The password must consist of 1 or more alphanumeric characters. No other characters are allowed.</string><string name="username_label">Username</string><string name="portnumber_label">Port Number</string><string name="port_validation_error">The port number must be in the range 1 to 65535.</string><string name="pst_disconnected">disconnected</string><string name="help_dlg_message">\
+Thanks for using FTP Server (SwiFTP)! Here are some brief usage instructions. More
+information can be found at http://ppareit.github.com/swiftp/.\n\n\
+\
+This program allows you to run an ftp server on your android device. This means that any
+program can access the files on your device while the ftp server is running. For example,
+entering \'ftp://...\' in the firefox url bar will allow you to browse the files on your
+device from a desktop pc or a laptop.\n\n
+\
+By default, the user name and password are both \'ftp\', you should change them. You use
+this username and password when accessing the server.\n\n
+\
+There is a configuration option (\"keep phone awake\") that fixes a problem where
+file transfers go slow or stop completely when the phone sleeps. If you have this
+problem, check this box and restart the program. Your phone will stay awake as long as
+the server is running.\n\n
+\
+For power and security reasons, it is recommended that the server be stopped after use.\n\n\
+\
+If something is not working the way you expect it to, please report it to Pieter Pareit
+(pieter.pareit@gmail.com).\n\n\
+\
+The development of this open source program is supported by buying this program through
+the google play store. You can follow the development at https://github.com/ppareit/swiftp .
+To have an idea on the features that will be implemented, see the issue tracker at
+https://github.com/ppareit/swiftp/issues .\n\n
+    </string><string name="swiftp_name">FTP Server</string><string name="unknown">unknown</string><string name="notif_text">at %s</string><string name="loginsettings_label">Login settings...</string><string name="help_label">Help...</string><string name="about_dlg_title">FTP Server About</string><string name="market_version_label">Market version</string><string name="pst_connecting">connecting</string><string name="cant_get_url">Can\'t retrieve url</string><string name="about_dlg_message">
+        <b>Description: </b>
+        FTP Server (SwiFTP) allows you to run an ftp server on your android device.\n\n\
+        <b>Website:</b>
+        http://ppareit.github.com/swiftp/\n\n
+        <b>Current maintainer:</b>
+        Pieter Pareit (pieter.pareit@gmail.com)\n\n
+        <b>Programming: </b>\
+        Dave Revell (dave.revell@gmail.com), Pieter Pareit (pieter.pareit@gmail.com)\n\n\
+        <b>Artwork:</b>
+        Birgit Niemegeers\n\n
+        <b>License: </b>
+        GNU General Public License v3.0\n\n
+    </string><string name="wifi_state_receiver_label">WifiStateReceiver</string><string name="password_label">Password</string><string name="wakelock_label">Keep device awake (full CPU speed)</string><string name="pst_unreachable">unreachable</string><string name="notif_stop_text">Stop server</string><string name="settings_label">Settings</string><string name="allow_anonymous_label">Allow anonymous login</string><string name="anonymous_summary">Anonymous logins are only allowed read access</string><string name="chroot_label">Stay in folder</string><string name="widget_name">FTP Server Widget</string><string name="swiftp_name_demo">FTP Server (Demo)</string><string name="running_summary_started">at %s</string><string name="acceptwifi_label">Accept connection from wifi</string><string name="pst_failed">failed</string><string name="market_version_summary">
+        This is the FTP Server Demo version.
+        Support development by getting the FTP Server from the android market.
+        Click here to go to the market.</string><string name="notif_server_starting">Starting at %s</string><string name="ok">OK</string><string name="pst_connected">connected</string><string name="anonymous_label">Anonymous</string><string name="running_label">FTP Server</string><string name="running_summary_stopped">Toggle the state of the ftp server</string><string name="nsd_servername_postfix">FTP Server</string><string name="username_validation_error">The password must consist of 1 or more alphanumeric characters. No other characters are allowed.</string><string name="storage_warning">Warning: storage is not available. You may want to unmount it.</string><string name="running_summary_failed">Failed to start the FTP server, not connected to the local network (wifi or ethernet)?</string><string name="help_dlg_title">FTP Server Help</string><string name="notif_title">FTP Server is running</string><string name="extra_label">Extra</string><string name="about_label">About...</string><string name="advancedsettings_label">Advanced settings...</string><string name="show_password_label">Display password</string></file><file path="E:\Documents\AndroidStudioProjects\Sdf\swiFTPLib\src\main\res\values-de\strings.xml" qualifiers="de"><string name="notif_text">auf %s</string><string name="swiftp_name">FTP Server</string><string name="market_version_summary">
+        Das ist die FTP Server Demo-Version.
+        Unterstütze die Entwicklung durch den Kauf von FTP Server im Andoid Markt.
+        Hier klicken um zum Markt zu gelangen.</string><string name="wifi_state_receiver_label">Wifi-Status-Empfänger</string><string name="notif_stop_text">Stoppe Server</string><string name="anonymous_label">Anonym</string><string name="pst_disconnected">getrennt</string><string name="help_label">Hilfe...</string><string name="pst_connecting">verbinde</string><string name="running_label">FTP Server</string><string name="port_validation_error">Die Portnummer muss im Bereich von 1 bis 65535 liegen!</string><string name="market_version_label">Versionshinweis</string><string name="pst_failed">fehlgeschlagen</string><string name="about_dlg_title">FTP Server Info</string><string name="wakelock_label">Gerät wach halten (volle CPU-Geschwindigkeit)</string><string name="pst_unreachable">unerreichbar</string><string name="allow_anonymous_label">Anonyme Anmeldungen erlauben</string><string name="running_summary_stopped">Status des FTP-Servers umschalten</string><string name="anonymous_summary">Anonyme Anmeldungen haben nur Leseberechtigung</string><string name="portnumber_label">Port</string><string name="loginsettings_label">Anmeldedaten...</string><string name="password_validation_error">Das Passwort muss aus 1 oder mehr alphanumerischen Zeichen bestehen, andere Zeichen sind nicht erlaubt!</string><string name="notif_server_starting">Starte auf %s</string><string name="unknown">unbekannt</string><string name="show_password_label">Passwort anzeigen</string><string name="storage_warning">Warnung: das Speichermedium ist nicht verfügbar!</string><string name="username_label">Benutzer</string><string name="extra_label">Extras</string><string name="about_label">Über...</string><string name="pst_connected">verbunden</string><string name="running_summary_started">auf %s</string><string name="notif_title">FTP Server gestartet</string><string name="running_summary_failed">Der FTP-Server konnte nicht gestartet werden, nicht mit dem lokalen Netzwerk (WiFi oder Ethernet) verbunden?</string><string name="nsd_servername_postfix">FTP Server</string><string name="username_validation_error">Der Benutzer muss aus 1 oder mehr alphanumerischen Zeichen bestehen, andere Zeichen sind nicht erlaubt!</string><string name="settings_label">Einstellungen</string><string name="advancedsettings_label">Erweiterte Einstellungen...</string><string name="acceptwifi_label">WiFi-Verbindungen erlauben</string><string name="cant_get_url">URL konnte nicht abgerufen werden</string><string name="user_label">Benutzer</string><string name="help_dlg_title">FTP Server Hilfe</string><string name="password_label">Passwort</string><string name="about_dlg_message">
+        <b>Beschreibung: </b>
+        FTP Server (SwiFTP) ermöglicht es dir einen FTP-Server auf deinem Androidgerät laufen zu lassen.\n\n\
+        <b>Webseite:</b>
+        http://ppareit.github.com/swiftp\n\n
+        <b>Aktueller Betreuer:</b>
+        Pieter Pareit (pieter.pareit@gmail.com)\n\n
+        <b>Programmierung: </b>\
+        Dave Revell (dave.revell@gmail.com), Pieter Pareit (pieter.pareit@gmail.com)\n\n\
+        <b>Grafik:</b>
+        Birgit Niemegeers\n\n
+        <b>Lizenz: </b>
+        GNU General Public License v3.0\n\n
+    </string><string name="chroot_label">Auf Verzeichnis beschränken</string><string name="widget_name">FTP Server Widget</string><string name="help_dlg_message">\
+Danke für die Nutzung von FTP Server (SwiFTP)! Hier sind einige kurze Benutzerhinweise. Weitere
+Informationen sind unter http://ppareit.github.com/swiftp verfügbar.\n\n\
+\
+Dieses Programm ermöglicht es dir einen FTP-Server auf deinem Androidgerät laufen zu lassen. Dies bedeutet, daß jedes
+Programm auf die Dateien auf deinem Gerät zugreifen kann während der Server läuft. Zum Beispiel ermöglicht dir die
+Eingabe von \'ftp://...\' in der Firefox Adresszeile die Dateien deines Gerätes auf einem PC oder Laptop anzuzeigen.\n\n
+\
+Standardmäßig sind Benutzer und Passwort beide auf \'ftp\' voreingestellt und sollten geändert werden. Diese werden
+zum Zugriff auf den Server benötigt.\n\n
+\
+Es gibt eine Konfigurationseinstellung (\"Gerät wach halten\"), welche Probleme mit langsamen oder stoppenden Dateitransfers
+behebt sobald das Telefon in Standby geht. Sollte das Problem auftreten diese Option aktivieren und das Programm neustarten.
+Das Telefon wird nun wach bleiben solange der Server läuft.\n\n
+\
+Aus Stromverbrauchs- und Sicherheitsgründen wird empfohlen den Server nach der Benutzung wieder zu beenden.\n\n\
+\
+Sollte etwas nicht wie erwartet funktionieren bitte an Pieter Pareit (pieter.pareit@gmail.com) melden.\n\n\
+\
+Die weitere Entwicklung dieses Open Source Programmes kann durch den Kauf im Google Play Store unterstützt werden.
+Alle Entwicklungsaktivitäten können unter https://github.com/ppareit/swiftp verfolgt werden.
+Gemeldete Probleme und Verbesserungsvorschläge sind unter https://github.com/ppareit/swiftp/issues einsehbar.\n\n
+    </string><string name="ok">OK</string></file><file path="E:\Documents\AndroidStudioProjects\Sdf\swiFTPLib\src\main\res\values-es\strings.xml" qualifiers="es"><string name="extra_label">Otros</string><string name="pst_connected">conectado</string><string name="market_version_label">Versión de pago</string><string name="notif_title">Servidor FTP ejecutándose</string><string name="ok">Aceptar</string><string name="running_summary_failed">Fallo al iniciar el servidor FTP. ¿Hay conexión con la red local (Wi\u2011Fi o Ethernet)?</string><string name="help_dlg_message">
+¡Gracias por usar FTP Server (SwiFTP)! Aquí hay algunas instrucciones de uso.
+Puedes encontrar más información en http://ppareit.github.com/swiftp/.\n\n
+
+Esta aplicación te permite ejecutar un servidor FTP en tu dispositivo Android. Esto permite
+que cualquier programa pueda acceder a los archivos de tu dispositivo cuando el servidor esté
+en ejecución. Por ejemplo, introduciendo \u00ABftp://\u2026\u00BB en la barra de direcciones
+del navegador tendrás acceso a los archivos y carpetas del dispositivo desde el ordenador o
+portátil.\n\n
+
+Por defecto, el nombre de usuario y la contraseña es \u00ABftp\u00BB para ambos, pero podrás
+cambiarlo por el que prefieras. Tendrás que usar este nombre de usuario y contraseña para
+acceder al servidor FTP.\n\n
+
+Hay una opción de configuración \u00ABMantener encendido\u00BB que soluciona el problema
+cuando la transferencia de ficheros se ralentiza o directamente se para al apagarse la pantalla.
+Si aparece este problema, marca esta opción y reinicia la aplicación. Tu dispositivo
+permanecerá encendido durante la ejecución del servidor FTP.\n\n
+
+Por razones de seguridad y consumo, es recomendable detener el servidor FTP después de su uso.\n\n
+
+Si algo no funciona como se espera que lo haga, por favor informa a Pieter Pareit en
+pieter.pareit@gmail.com.\n\n
+
+El desarrollo de esta aplicación de código abierto está soportado por la compra de esta
+aplicación a través de Play Store. Puedes seguir su desarrollo en la dirección
+https://github.com/ppareit/swiftp . Para tener una idea de las características que se
+implementarán, mira el registro de incidencias en https://github.com/ppareit/swiftp/issues .\n\n
+    </string><string name="unknown">desconocido</string><string name="notif_text">en %s</string><string name="running_label">Servidor FTP</string><string name="username_label">Nombre de usuario</string><string name="anonymous_label">Acceso anónimo</string><string name="market_version_summary">Esta es una versión de demostración. Da tu apoyo al desarrollador obteniendo una versión de pago de la aplicación. Toca aquí para ir a Play Store.</string><string name="pst_failed">fallido</string><string name="user_label">Usuario</string><string name="about_dlg_message">
+        <b>Descripción:</b>
+        FTP Server (SwiFTP) permite ejecutar un servidor FTP en tu dispositivo Android.\n\n
+        <b>Sitio web:</b>
+        http://ppareit.github.com/swiftp/\n\n
+        <b>Mantenido por:</b>
+        Pieter Pareit (pieter.pareit@gmail.com)\n\n
+        <b>Programado por:</b>
+        Dave Revell (dave.revell@gmail.com), Pieter Pareit (pieter.pareit@gmail.com)\n\n
+        <b>Diseñado por:</b>
+        Birgit Niemegeers\n\n
+        <b>Licenciado bajo:</b>
+        GNU General Public License v3.0\n\n
+    </string><string name="about_dlg_title">Acerca de FTP Server</string><string name="settings_label">Ajustes</string><string name="acceptwifi_label">Aceptar conexión desde Wi\u2011Fi</string><string name="help_dlg_title">Ayuda de FTP Server</string><string name="nsd_servername_postfix">FTP Server</string><string name="pst_connecting">conectando</string><string name="pst_unreachable">inalcanzable</string><string name="swiftp_name">FTP Server</string><string name="show_password_label">Mostrar contraseña</string><string name="password_label">Contraseña</string><string name="notif_stop_text">Detener servidor</string><string name="username_validation_error">El usuario debe tener uno o más caracteres alfanuméricos. El resto de caracteres no están permitidos.</string><string name="loginsettings_label">Ajustes de acceso\u2026</string><string name="chroot_label">Carpeta de inicio</string><string name="port_validation_error">The port number must be in the range 1 to 65535.</string><string name="widget_name">Widget FTP Server</string><string name="running_summary_stopped">Cambiar el estado del servidor FTP</string><string name="running_summary_started">en %s</string><string name="password_validation_error">La contraseña debe tener uno o más caracteres alfanuméricos. El resto de caracteres no están permitidos.</string><string name="pst_disconnected">desconectado</string><string name="portnumber_label">Número de puerto</string><string name="cant_get_url">Imposible obtener url</string><string name="wifi_state_receiver_label">WifiStateReceiver</string><string name="help_label">Ayuda\u2026</string><string name="notif_server_starting">Iniciando servidor FTP en %s</string><string name="storage_warning">Aviso: Almacenamiento no disponible. Puede que quieras desmontarlo.</string><string name="wakelock_label">Mantener encendido</string><string name="allow_anonymous_label">Permitir acceso anónimo</string><string name="anonymous_summary">El acceso anónimo solo tiene permisos de lectura</string><string name="advancedsettings_label">Ajustes avanzados\u2026</string><string name="about_label">Acerca de\u2026</string></file><file path="E:\Documents\AndroidStudioProjects\Sdf\swiFTPLib\src\main\res\values-it\strings.xml" qualifiers="it"><string name="cant_get_url">Impossibile ottenere l\'indirizzo</string><string name="extra_label">Extra</string><string name="nsd_servername_postfix">Server FTP</string><string name="wakelock_label">Mantieni attivo il dispositivo (piena velocità di CPU)</string><string name="about_label">Info...</string><string name="pst_disconnected">disconnesso</string><string name="acceptwifi_label">Accetta connessioni via WiFi</string><string name="portnumber_label">Numbero Porta</string><string name="pst_connecting">connessione</string><string name="running_summary_started">su %s</string><string name="storage_warning">Attenzione: la memoria di massa non è disponibile. Probabilmente dovresti smontarla.</string><string name="password_label">Password</string><string name="wifi_state_receiver_label">WifiStateReceiver</string><string name="widget_name">Widget Server FTP</string><string name="swiftp_name">Server FTP</string><string name="ok">OK</string><string name="running_summary_stopped">Alterna lo stato del server FTP</string><string name="show_password_label">Mostra password</string><string name="anonymous_label">Anonimo</string><string name="running_summary_failed">Errore nel lancio del server FTP. Sei sicuro di essere connesso ad una rete locale (WiFi o Ethernet)?</string><string name="chroot_label">Rimani nella cartella</string><string name="advancedsettings_label">Impostazioni avanzate...</string><string name="help_label">Aiuto...</string><string name="notif_text">su %s</string><string name="running_label">Server FTP</string><string name="pst_unreachable">non disponibile</string><string name="pst_connected">connesso</string><string name="username_label">Nome utente</string><string name="market_version_label">Versione Market</string><string name="notif_server_starting">Esecuzione su %s</string><string name="anonymous_summary">Gli utenti anonimi avranno accesso in sola lettura</string><string name="about_dlg_title">Info Server FTP</string><string name="unknown">sconosciuto</string><string name="about_dlg_message">
+        <b>Descrizione: </b>
+        Server FTP (SwiFTP) ti permette di eseguire un server FTP sul tuo dispositivo Android.\n\n\
+        <b>Sito web:</b>
+        http://ppareit.github.com/swiftp/\n\n
+        <b>Manutentore attuale:</b>
+        Pieter Pareit (pieter.pareit@gmail.com)\n\n
+        <b>Programmazione: </b>\
+        Dave Revell (dave.revell@gmail.com), Pieter Pareit (pieter.pareit@gmail.com)\n\n\
+        <b>Artwork:</b>
+        Birgit Niemegeers\n\n
+        <b>Traduzione IT: </b>
+        Valerio Bozzolan\n\n
+        <b>Licenza: </b>
+        GNU General Public License v3.0\n\n
+    </string><string name="pst_failed">fallito</string><string name="market_version_summary">
+        Questa è la versione Server FTP Demo.
+        Puoi supportare lo sviluppo ottenendo Server FTP dall\'Android market.
+        Clicca qui per visitare il market.</string><string name="user_label">Utente</string><string name="password_validation_error">La password deve avere almeno 1 carattere alfanumerico. Non sono ammessi altri caratteri.</string><string name="port_validation_error">La porta deve essere fra 1 e 65535.</string><string name="help_dlg_message">\
+Grazie per aver scelto Server FTP (SwiFTP)! Qui sono riportate alcune semplici istruzioni. Puoi
+trovare più informazioni all\'indirizzo http://ppareit.github.com/swiftp/.\n\n\
+\
+Questo programma ti permette di eseguire un server FTP sul tuo dispositivo Android. Questo significa che
+puoi accedere ai file del tuo dispositivo da qualsiasi client FTP mentre stai eseguendo il server FTP. Per esempio,
+visitando l\'indirizzo \'ftp://...\' nella barra degli indirizzi di Mozilla Firefox potrai sfogliare i file
+del tuo dispositivo Android da qualsiasi altro PC/portatile/smartphone connesso alla tua rete locale.\n\n
+\
+Il nome utente e la password predefiniti sono entrambi \'ftp\' e dovresti cambiarli al più presto! Servono
+come credenziali per poter effettuare l\'accesso al server.\n\n
+\
+L\'opzione (\"mantieni attivo il dispositivo\") può essere attivata nel caso in cui il trasferimento di file
+va rallentandosi o si interrompa di colpo quando il dispositivo entra in standby. Se riscontri questo problema,
+spunta questa opzione e fai ripartire il server FTP. Il tuo dispositivo rimarrà attivo fintanto che
+il server rimarrà in esecuzione.\n\n
+\
+Per motivi di sicurezza e per risparmiare la batteria, interrompi il server dopo l\'uso.\n\n\
+\
+Se qualcosa non funziona come dovrebbe, per favore comunicalo a Pieter Pareit
+(pieter.pareit@gmail.com).\n\n\
+\
+Lo sviluppo di questo software libero è supportato anche grazie all\'acquisto dell\'app presente sul
+Google Play Store. Puoi seguire attivamente lo sviluppo su https://github.com/ppareit/swiftp .
+Se hai qualche idea per nuove funzionalità da implementare, dai uno sguardo all\'issue tracker su
+https://github.com/ppareit/swiftp/issues .\n\n
+    </string><string name="allow_anonymous_label">Permetti login anonimo</string><string name="help_dlg_title">Aiuto Server FTP</string><string name="settings_label">Impostazioni</string><string name="loginsettings_label">Impostazioni login...</string><string name="notif_title">Server FTP in esecuzione</string><string name="username_validation_error">Il nome utente deve avere almeno 1 carattere alfanumerico. Non sono ammessi altri caratteri.</string><string name="notif_stop_text">Interrompi server</string></file><file path="E:\Documents\AndroidStudioProjects\Sdf\swiFTPLib\src\main\res\values-ja\strings.xml" qualifiers="ja"><string name="advancedsettings_label">拡張設定...</string><string name="running_summary_failed">FTP サーバが開始できません。ローカルネットワークに接続されていますか (wifi または ethernet)?</string><string name="help_label">ヘルプ...</string><string name="notif_text">%s</string><string name="username_validation_error">パスワードは1文字以上の英数字で入力してください。他の文字は使用できません。</string><string name="anonymous_summary">匿名ログインは読み取りアクセスのみ許可されます</string><string name="chroot_label">ルートとして公開するフォルダ</string><string name="running_summary_stopped">ftp サーバの状態を切替</string><string name="username_label">ユーザ名</string><string name="about_dlg_title">FTP サーバについて</string><string name="storage_warning">警告: ストレージが使用できません。アンマウントする必要があるかもしれません。</string><string name="swiftp_name">FTP サーバ</string><string name="notif_title">FTP サーバは実行中です</string><string name="show_password_label">パスワードを表示する</string><string name="allow_anonymous_label">匿名ログインを許可する</string><string name="anonymous_label">匿名</string><string name="pst_unreachable">到達不能</string><string name="widget_name">FTP サーバ・ウィジット</string><string name="ok">OK</string><string name="port_validation_error">ポート番号は 1 ～ 65535 の範囲で入力してください。</string><string name="running_summary_started">開始しました %s</string><string name="password_validation_error">パスワードは1文字以上の英数字で入力してください。他の文字は使用できません。</string><string name="portnumber_label">ポート番号</string><string name="pst_connecting">接続しています</string><string name="about_dlg_message">
+        <b>説明: </b>
+        FTP サーバ (SwiFTP) は、アンドロイド端末で実行する ftp サーバです。\n\n\
+        <b>Webサイト:</b>
+        http://ppareit.github.com/swiftp/\n\n
+        <b>現在のメンテナンス者:</b>
+        Pieter Pareit (pieter.pareit@gmail.com)\n\n
+        <b>プログラミング: </b>\
+        Dave Revell (dave.revell@gmail.com), Pieter Pareit (pieter.pareit@gmail.com)\n\n\
+        <b>図版:</b>
+        Birgit Niemegeers\n\n
+        <b>ライセンス: </b>
+        GNU General Public License v3.0\n\n
+    </string><string name="pst_connected">接続しました</string><string name="wakelock_label">端末を起動したままにする (最高 CPU スピード)</string><string name="password_label">パスワード</string><string name="nsd_servername_postfix">FTP サーバ</string><string name="settings_label">設定</string><string name="acceptwifi_label">wifi の接続を許可する</string><string name="about_label">FTP サーバについて...</string><string name="loginsettings_label">ログイン設定...</string><string name="pst_disconnected">切断されました</string><string name="running_label">FTP サーバ</string><string name="extra_label">その他</string><string name="user_label">ユーザ</string><string name="notif_server_starting">開始しています %s</string><string name="unknown">不明</string><string name="market_version_summary">
+        この FTP サーバはデモ版です。
+        GooglePlay から FTP サーバを入手するとサポートが受けられます。
+        ここをクリックすると GooglePlay に移動します。</string><string name="pst_failed">失敗しました</string><string name="wifi_state_receiver_label">Wifiステートレシーバ</string><string name="help_dlg_title">FTP サーバ・ヘルプ</string><string name="notif_stop_text">サーバを停止します</string><string name="market_version_label">製品版</string><string name="help_dlg_message">\
+FTP サーバ (SwiFTP) のご利用ありがとうございます! 簡単な使用方法を説明します。
+さらに詳細は http://ppareit.github.com/swiftp/ を参照してください。\n\n\
+\
+このプログラムはアンドロイド端末で実行する ftp サーバです。
+これにより、ftp サーバの実行中は様々なプログラムからあなたの端末上のファイルにアクセスすることができます。
+例えば、デスクトップ PC やラップトップで、firefox の url バーに、\'ftp://...\' と入力すると、あなたの端末にあるファイルを表示することができます。\n\n
+\
+デフォルトではユーザ名とパスワードは共に \'ftp\' です。これはすぐに変更してください。このユーザ名とパスワードを使用してサーバにアクセスします。\n\n
+\
+端末がスリープした時に、ファイル転送が遅くなったり、停止する問題の対応のために \"端末を起動したままにする\" というオプション設定があります。
+この問題が発生した時には、このボックスをチェックして、プログラムを再起動してください。端末はサーバの実行中は起動したままになります。\n\n
+\
+パフォーマンスやセキュリティの理由から、使用後はサーバを停止することを推奨します。\n\n\
+\
+もし期待した通りに動作しない場合は、Pieter Pareit (pieter.pareit@gmail.com) に報告してください。\n\n\
+\
+google play ストアでこのプログラムを購入して頂くことで、このオープンソースプログラムの開発は支援されます。
+開発状況は https://github.com/ppareit/swiftp を参照してください。
+実装機能に関するアイデア等は、イシュートラッカー https://github.com/ppareit/swiftp/issues を参照してください。\n\n
+    </string><string name="cant_get_url">url を解析できません</string></file><file path="E:\Documents\AndroidStudioProjects\Sdf\swiFTPLib\src\main\res\values-nl\strings.xml" qualifiers="nl"><string name="swiftp_name">FTP Server</string><string name="pst_failed">failed</string><string name="pst_disconnected">disconnected</string><string name="storage_warning">Warning: storage is not available. You may want to unmount it.</string><string name="advancedsettings_label">Geavanceerde instellingen...</string><string name="portnumber_label">Poort nummer</string><string name="password_validation_error">The password must consist of 1 or more alphanumeric characters. No other characters are allowed.</string><string name="about_dlg_title">Over FTP Server</string><string name="market_version_summary">Dit is de FTP server demo. Je kan de ontwikkeling van dit programma ondersteunen door de FTP Server te kopen op de android play store. Click hier om naar de play store te gaan.</string><string name="port_validation_error">The port number must be in the range 1 to 65535.</string><string name="running_summary_failed">Fout tijdens het verbinden van de FTP server, verbonden met het netwerk?</string><string name="cant_get_url">Can\'t retreive url</string><string name="running_summary_stopped">Wijzig de status van de FTP Server</string><string name="pst_connected">connected</string><string name="pst_connecting">connecting</string><string name="wakelock_label">Houd toestel wakker (volledige CPU snelheid)</string><string name="username_label">Gebruikersnaam</string><string name="running_summary_started">op %s</string><string name="username_validation_error">The password must consist of 1 or more alphanumeric characters. No other characters are allowed.</string><string name="loginsettings_label">Aanmeld instellingen...</string><string name="market_version_label">Market versie</string><string name="notif_stop_text">Stop server</string><string name="notif_title">FTP Server is verbonden</string><string name="chroot_label">Blijf in map</string><string name="anonymous_summary">Anonieme gebruikers mogen enkel bestanden lezen</string><string name="extra_label">Extra\'s</string><string name="help_label">Help...</string><string name="user_label">Gebruiker</string><string name="nsd_servername_postfix">FTP Server</string><string name="unknown">unknown</string><string name="settings_label">Instellingen</string><string name="acceptwifi_label">Accepteer verbindingen via wifi</string><string name="ok">OK</string><string name="show_password_label">Toon paswoord</string><string name="about_dlg_message">
+        <b>Beschrijving: </b>
+        FTP Server (SwiFTP) laat het toe om een ftp server te draaien op je android toestel.\n\n\
+        <b>Website:</b>
+        http://ppareit.github.com/swiftp/\n\n
+        <b>Huidige ontwikkelaar:</b>
+        Pieter Pareit (pieter.pareit@gmail.com)\n\n
+        <b>Programming: </b>\
+        Dave Revell (dave.revell@gmail.com), Pieter Pareit (pieter.pareit@gmail.com)\n\n\
+        <b>Artwork:</b>
+        Birgit Niemegeers\n\n
+        <b>License: </b>
+        GNU General Public License v3.0\n\n
+</string><string name="help_dlg_title">FTP Server Help</string><string name="pst_unreachable">unreachable</string><string name="notif_text">op %s</string><string name="about_label">Over...</string><string name="help_dlg_message">\
+Bedankt om FTP Server (Swiftp) te gebruiken. Meer informatie vind je op http://ppareit.github.com/swiftp/.\n\n\
+\
+Dit programma laat het toe om een FTP server te draaien op je android toestel. 
+Dit wil zeggen dat andere programma\'s de bestanden kunnen benaderen op je toestel zolang
+de server aan het draaien is. Bij voorbeeld, als je \'ftp://...\' intikt in de url
+balk in Firefox, dan zal dit programma alle bestanden op je toestel oplijsten.\n\n
+\
+Standaard zijn de gebruikersnaam en wachtwoord \'ftp\', er wordt aangeraden om deze te
+wijzigen. Deze gebruikersnaam is nodig op het toestel dat de FTP server benaderd,
+bijvoorbeeld je pc.\n\n
+\
+Om de batterij te sparen en uit veiligheidsoverwegingen is het aan te raden van de
+server af te leggen na gebruik.\n\n\
+\
+Als er iets niet werkt naar behoren kan je de ontwikkelaar contacteren via Pieter Pareit
+(pieter.pareit@gmail.com). Engels of Nederlands.\n\n\
+\
+De ontwikkeling van dit open source programma wordt ondersteunt door een versie te kopen
+via de google play store.. Je kan de ontwikkeling volgen via
+https://github.com/ppareit/swiftp . Problemen die opgelost worden en nieuwe mogelijkheden
+van de volgende versie staan op https://github.com/ppareit/swiftp/issues .\n\n
+    </string><string name="wifi_state_receiver_label">WifiStateReceiver</string><string name="widget_name">FTP Server Widget</string><string name="running_label">FTP Server</string><string name="allow_anonymous_label">Anoniem aanloggen toestaan</string><string name="notif_server_starting">Starten op %s</string><string name="password_label">Paswoord</string><string name="anonymous_label">Anoniem</string></file><file path="E:\Documents\AndroidStudioProjects\Sdf\swiFTPLib\src\main\res\values-ru\strings.xml" qualifiers="ru"><string name="running_label">Запуск</string><string name="running_summary_stopped">Включить FTP сервер</string><string name="wifi_state_receiver_label">WifiStateReceiver</string><string name="chroot_label">Корневая папка доступа</string><string name="username_label">Имя пользователя</string><string name="market_version_summary">Установлена демонстрационная версия программы.
+        Вы поддержите разработку, если приобретете программу на Google Play.
+		Чтобы сделать это, нажмите здесь. </string><string name="market_version_label">Текущая версия</string><string name="show_password_label">Отображать пароль</string><string name="help_label">Помощь...</string><string name="pst_failed">ошибка</string><string name="help_dlg_message">\
+Благодарим за использование программы FTP Server (SwiFTP)! Ниже приведены краткие инструкции к программе.
+Более подробную информацию Вы можете найти здесь: http://ppareit.github.com/swiftp/.\n\n\
+\
+Данная программа дает возможность легко управлять FTP-сервером на вашем Android-устройстве, 
+позволяя внешним программам работать с файлами на нем, когда FTP сервер запущен.  
+Например, введя \'ftp://...\' в адресной строке Firefox, Вы сможете получить доступ к файлам на Вашем устройстве
+с настольного компьютера или ноутбука.\n\n
+\
+По умолчанию установлены одинаковые значения имени и пароля пользователя для доступа - \'ftp\', но Вы можете изменить их. Имя пользователя
+и пароль необходимо вводить при доступе из внешней программы.\n\n
+\
+Параметр настройки (\"Не давать уснуть\") позволяет решить проблему
+с замедлением или остановкой передачи файла, когда Ваше устройство переходит в режим сна. 
+Если у Вас возникла такая проблема, установите галочку и перезапустите программу. 
+Ваше устройство не уснет, пока FTP сервер активен.\n\n
+\
+Не забывайте останавливать FTP сервер после использования из соображений безопасности и экономии заряда батареи\n\n\
+\
+Если что-то не работает, просьба сообщить нам об этом письмом в адрес Pieter Pareit
+(pieter.pareit@gmail.com).\n\n\
+\
+Разработка данной программы с открытым кодом поддерживается исключительно за счет средств
+от продажи в магазине Google Play. Вы можете следить за разработкой на https://github.com/ppareit/swiftp .
+Если у Вас есть идеи, как улучшить программу, Вы можете оформить заявку в системе отслеживания по адресу
+https://github.com/ppareit/swiftp/issues .\n\n
+    </string><string name="about_dlg_title">О программе FTP Server</string><string name="storage_warning">Предупреждение: файловый носитель не доступен. Возможно, Вы хотели отсоединить его.</string><string name="notif_title">FTP сервер включен.</string><string name="notif_stop_text">Остановить сервер</string><string name="pst_connected">подключено</string><string name="anonymous_summary">При анонимном подключении доступ резрешен только на чтение</string><string name="port_validation_error">Номер порта должен иметь значение от 1 до 65535.</string><string name="cant_get_url">Не удается получить URL</string><string name="unknown">неизвестно</string><string name="extra_label">Дополнительно</string><string name="about_label">О программе...</string><string name="notif_text">URL для доступа %s</string><string name="loginsettings_label">Настройки подключения...</string><string name="pst_disconnected">отключено</string><string name="anonymous_label">АНОНИМНОЕ ПОДКЛЮЧЕНИЕ</string><string name="acceptwifi_label">Принимать подключения по wifi</string><string name="password_label">Пароль</string><string name="wakelock_label">Не давать уснуть (максимальная производительность ЦП)</string><string name="password_validation_error">Пароль длолжен состоять из одного или более бкувенно-цифровых символов. Никакие другие символы не допускаются.</string><string name="pst_connecting">поключение</string><string name="help_dlg_title">FTP Server Help</string><string name="widget_name">FTP Server Widget</string><string name="settings_label">Настройки</string><string name="allow_anonymous_label">Разрешить анонимное подключение</string><string name="swiftp_name">FTP Server</string><string name="portnumber_label">Номер порта</string><string name="ok">OK</string><string name="advancedsettings_label">Расширенные настройки...</string><string name="username_validation_error">Имя пользователя должно состоять из одного или более бкувенно-цифровых символов. Никакие другие символы не допускаются.</string><string name="running_summary_failed">Невозможно включить FTP сервер. Проверьте подключение к сети (wifi или ethernet).</string><string name="pst_unreachable">недоступно</string><string name="notif_server_starting">FTP сервер запускается...%s</string><string name="nsd_servername_postfix">FTP сервер</string><string name="running_summary_started">Адрес: %s</string><string name="user_label">ПОЛЬЗОВАТЕЛЬ</string><string name="about_dlg_message">
+        <b>Описание: </b>
+        FTP Server (SwiFTP) - простая и удобная программа, которая позволяет запустить ftp сервер на Вашем android-телефоне или планшетном компьютере.\n\n\
+        <b>Веб-сайт:</b>
+        http://ppareit.github.com/swiftp/\n\n
+        <b>Текущее сопровождение:</b>
+        Pieter Pareit (pieter.pareit@gmail.com)\n\n
+        <b>Программирование: </b>\
+        Dave Revell (dave.revell@gmail.com), Pieter Pareit (pieter.pareit@gmail.com)\n\n\
+        <b>Оформление:</b>
+        Birgit Niemegeers\n\n
+        <b>Лицензии: </b>
+        GNU General Public License v3.0\n\n
+</string></file><file path="E:\Documents\AndroidStudioProjects\Sdf\swiFTPLib\src\main\res\values-sr\strings.xml" qualifiers="sr"><string name="portnumber_label">Број порта</string><string name="pst_failed">неуспех</string><string name="market_version_label">Издање за продавницу</string><string name="wifi_state_receiver_label">WifiStateReceiver</string><string name="market_version_summary">
+        Ово је демо издање ФТП сервера.
+        Подржите развој тако што ћете купити ФТП сервер са Андроид продавнице.
+        Кликните овде да одете у продавницу.</string><string name="pst_disconnected">неповезан</string><string name="running_summary_failed">Неуспех покретања ФТП сервера, да ли сте повезани на локалну мрежу (бежично или жично)?</string><string name="notif_stop_text">Заустави сервер</string><string name="pst_unreachable">недоступан</string><string name="advancedsettings_label">Напредне поставке...</string><string name="about_label">О програму...</string><string name="help_label">Помоћ...</string><string name="extra_label">Додатно</string><string name="wakelock_label">Држи уређај будним (пуна брзина ЦПУ-а)</string><string name="port_validation_error">Број порта мора да буде у распону од 1 до 65535.</string><string name="running_summary_started">на %s</string><string name="about_dlg_title">О ФТП серверу</string><string name="pst_connecting">повезивање</string><string name="anonymous_summary">Анонимне пријаве имају само дозволу читања</string><string name="password_validation_error">Лозинка мора да садржи 1 или више алфанумеричких знакова. Остали знакови нису допуштени.</string><string name="show_password_label">Прикажи лозинку</string><string name="chroot_label">Остани у фасцикли</string><string name="widget_name">Виџет ФТП сервера</string><string name="user_label">Корисник</string><string name="running_label">ФТП сервер</string><string name="loginsettings_label">Поставке пријаве...</string><string name="allow_anonymous_label">Дозволи анонимне пријаве</string><string name="anonymous_label">Анонимно</string><string name="notif_title">ФТП сервер је покренут</string><string name="username_label">Корисничко име</string><string name="running_summary_stopped">Мењај стање фтп сервера</string><string name="notif_server_starting">Покрећем на %s</string><string name="acceptwifi_label">Прихвати везу са бежичног</string><string name="notif_text">на %s</string><string name="username_validation_error">Корисничко име мора да садржи 1 или више алфанумеричких знакова. Остали знакови нису допуштени.</string><string name="password_label">Лозинка</string><string name="unknown">непознато</string><string name="help_dlg_message">\
+Хвала што користите ФТП сервер (SwiFTP)! Ево кратких упутстава. Више
+информација можете да нађете на http://ppareit.github.com/swiftp/.\n\n\
+\
+Овај програм вам омогућује да покренете фтп сервер на вашем Андроид уређају. Ово значи да
+било који програм може да приступи фајловима на вашем уређају док је фтп сервер покренут. 
+На пример, унос „ftp://...“ у Фајерфоксу ће вам омогућити да прегледате фајлове на вашем
+уређају са рачунара или лаптопа.\n\n
+\
+Подразумевано, корисничко име и лозинка су „ftp“, требате да их промените. Користићете ово
+корисничко име и лозинку приликом приступа на сервер.\n\n
+\
+Постоји опција „Држи уређај будним“ која поправља проблем где преноси фајлова теку споро
+или се зауставе у потпуности када телефон оде у стање спавања. Ако вам се дешава овај
+проблем, укључите ову опцију и поново покрените програм. Ваш телефон ће остати будан док
+је сервер покренут.\n\n
+\
+Због очувања енергије и безбедности, препоручиво је да сервер зауставите након употребе.\n\n\
+\
+Ако нешто не ради како очекујете, молим вас да то пријавите Питеру Пареиту (Pieter Pareit, 
+pieter.pareit@gmail.com).\n\n\
+\
+Подржите развој овог програма отвореног кôда тако што ћете га купити преко Гуглове Плеј
+продавнице. Развој можете да пратите на  https://github.com/ppareit/swiftp .
+За увид у функционалности које ће бити имплементиране, погледајте пратилац пријава на
+https://github.com/ppareit/swiftp/issues .\n\n
+    </string><string name="pst_connected">повезан</string><string name="settings_label">Поставке</string><string name="cant_get_url">Не могу да добавим УРЛ</string><string name="nsd_servername_postfix">ФТП сервер</string><string name="swiftp_name">ФТП сервер</string><string name="help_dlg_title">Помоћ за ФТП сервер</string><string name="ok">У реду</string><string name="about_dlg_message">
+        <b>Опис: </b>
+        ФТП сервер (SwiFTP) вам омогућује да покренете фтп сервер на вашем Андроид уређају.\n\n\
+        <b>Вебсајт:</b>
+        http://ppareit.github.com/swiftp/\n\n
+        <b>Тренутни одржавалац:</b>
+        Pieter Pareit (pieter.pareit@gmail.com)\n\n
+        <b>Програмери: </b>\
+        Dave Revell (dave.revell@gmail.com), Pieter Pareit (pieter.pareit@gmail.com)\n\n\
+        <b>Илустрације:</b>
+        Birgit Niemegeers\n\n
+        <b>Лиценца: </b>
+        ГНУова Општа јавна лиценца в3.0\n\n
+    </string><string name="storage_warning">Упозорење: складиште није доступно. Можда желите да га демонтирате.</string></file><file path="E:\Documents\AndroidStudioProjects\Sdf\swiFTPLib\src\main\res\values-zh-rCN\strings.xml" qualifiers="zh-rCN"><string name="widget_name">FTP Server Widget</string><string name="notif_server_starting">启动于 %s 端口</string><string name="running_summary_failed">FTP server 启动失败，您尚未连接到 Wi-Fi 或以太网络？</string><string name="advancedsettings_label">高级设置...</string><string name="pst_connecting">正在连接</string><string name="notif_text">服务运行于 %s 端口</string><string name="show_password_label">显示密码</string><string name="password_label">密码</string><string name="notif_title">FTP Server 正在运行</string><string name="market_version_summary">欢迎使用 FTP Server Demo 版本。
+        您可以通过在 Google Play 中购买 FTP Server 以支持开发者。
+		点击此处跳转至 Google Play 市场。</string><string name="extra_label">其他</string><string name="wifi_state_receiver_label">WifiStateReceiver</string><string name="help_dlg_message">\
+感谢您使用 FTP Server (SwiFTP)！这里有一些简要的使用说明。更多
+使用信息您可登陆 http://ppareit.github.com/swiftp/ 查看。\n\n\
+\
+此项目允许您在 Android 设备中运行 FTP 服务器，这意味
+着当您开启 FTP 服务的时候任何程序均可访问您设备中的
+所有文件，例如在桌面端或笔记本的 Firefox 浏览器地址
+栏中输入 \"ftp://...\" 即可浏览您设备中的所有文件。\n\n
+\
+在通常情况下，用户名以及密码均为 \"ftp\"，您应该在使用
+时修改它们，并且使用此用户名以及密码访问此服务器。\n\n
+\
+在配置选项中的“保持设备唤醒”可以修复当设
+备休眠时传输速度缓慢或完全停止的问题，若
+您出现了此问题，请选中此复选框并重启程序
+后重试。您的设备将在服务运行时保持唤醒。\n\n
+\
+由于电源以及安全性方面原因，我们建议您在使用后关闭服务。\n\n\
+\
+如果没有如您预期的那样正常工作，请将其反馈
+至 Pieter Pareit(pieter.pareit@gmail.com)。\n\n\
+\
+您可以通过在 Google Play 中购买支持此程序的付费版开源项目
+的后续开发。您可以访问 https://github.com/ppareit/swiftp
+随时查看并跟进开发进度，如果您有任何建议或想法，您可以访问
+https://github.com/ppareit/swiftp/issues 提交您的建议。\n\n
+    </string><string name="swiftp_name">FTP Server</string><string name="unknown">未知</string><string name="acceptwifi_label">接受 Wi-Fi 连接</string><string name="help_label">帮助...</string><string name="storage_warning">警告：当前存储暂不可用，您可能需要取消挂载。</string><string name="settings_label">设置</string><string name="pst_disconnected">未连接</string><string name="help_dlg_title">FTP Server 帮助</string><string name="market_version_label">市场版本</string><string name="about_dlg_title">关于 FTP Server</string><string name="running_label">正在运行</string><string name="about_dlg_message">
+        <b>简介：</b>
+        FTP Server (SwiFTP) 允许在您的 Android 设备上运行文件传输服务器。\n\n\
+        <b>站点：</b>
+        http://ppareit.github.com/swiftp/\n\n
+        <b>维护：</b>
+        Pieter Pareit (pieter.pareit@gmail.com)\n\n
+        <b>编译：</b>
+        Dave Revell (dave.revell@gmail.com), Pieter Pareit (pieter.pareit@gmail.com)\n\n\
+        <b>美工：</b>
+        Birgit Niemegeers\n\n
+        <b>许可：</b>
+        GNU General Public License v3.0\n\n
+</string><string name="username_label">用户名</string><string name="portnumber_label">端口号</string><string name="about_label">关于...</string><string name="pst_unreachable">无法访问</string><string name="nsd_servername_postfix">FTP Server</string><string name="pst_connected">已连接</string><string name="running_summary_started">FTP server 运行于 %s 端口</string><string name="chroot_label">设为根目录</string><string name="ok">确认</string><string name="pst_failed">已失败</string><string name="username_validation_error">用户名至少需要包括一个或更多字符，不允许为空。</string><string name="port_validation_error">端口号必须在 1 至 65535 之间。</string><string name="running_summary_stopped">开始 FTP server</string><string name="wakelock_label">保持设备唤醒（最大 CPU 频率）</string><string name="cant_get_url">无法检索 URL</string><string name="password_validation_error">密码至少需要包括一个或更多字符，不允许为空。</string></file><file path="E:\Documents\AndroidStudioProjects\Sdf\swiFTPLib\src\main\res\values-zh-rTW\strings.xml" qualifiers="zh-rTW"><string name="password_validation_error">密碼至少需要包括一個或更多字符，不允許為空。</string><string name="notif_server_starting">啟動於 %s 端口</string><string name="pst_connecting">正在連結</string><string name="wakelock_label">保持設備喚醒（最大 CPU 頻率）</string><string name="pst_unreachable">無法訪問</string><string name="widget_name">FTP Server Widget</string><string name="settings_label">設定</string><string name="help_dlg_title">FTP Server 幫助</string><string name="pst_failed">已失敗</string><string name="pst_connected">已連結</string><string name="about_label">關於...</string><string name="password_label">密碼</string><string name="portnumber_label">端口號</string><string name="running_label">正在運行</string><string name="market_version_summary">歡迎使用 FTP Server Demo 版本。
+        您可以通過在 Google Play 中購買 FTP Server 以支持開發者。
+		點擊此處跳轉至 Google Play 市場。</string><string name="wifi_state_receiver_label">WifiStateReceiver</string><string name="storage_warning">警告：當前存儲暫不可用，您可能需要取消掛載。</string><string name="extra_label">其他</string><string name="notif_title">FTP Server 正在運行</string><string name="show_password_label">顯示密碼</string><string name="acceptwifi_label">接受 Wi-Fi 連結</string><string name="swiftp_name">FTP Server</string><string name="running_summary_started">FTP server 運行於 %s 端口</string><string name="ok">確認</string><string name="username_validation_error">用戶名至少需要包括一個或更多字符，不允許為空。</string><string name="help_label">幫助...</string><string name="notif_text">服務運行於 %s 端口</string><string name="about_dlg_title">關於 FTP Server</string><string name="cant_get_url">無法檢索 URL</string><string name="pst_disconnected">未連結</string><string name="port_validation_error">端口號必須在 1 至 65535 之間。</string><string name="chroot_label">設為根目錄</string><string name="advancedsettings_label">高級設定...</string><string name="help_dlg_message">\
+感謝您使用 FTP Server (SwiFTP)！這裏有一些簡要的使用說明。更多
+使用信息您可登陸 http://ppareit.github.com/swiftp/ 查看。\n\n\
+\
+此項目允許您在 Android 設備中運行 FTP 服務器，這意味
+著當您開啟 FTP 服務的時候任何程式均可訪問您設備中的
+所有文件，例如在桌面端或筆記本的 Firefox 瀏覽器地址
+欄中輸入 \"ftp://...\" 即可瀏覽您設備中的所有文件。\n\n
+\
+在通常情況下，用戶名以及密碼均為 \"ftp\"，您應該在使用
+時修改它們，並且使用此用戶名以及密碼訪問此服務器。\n\n
+\
+在配置選項中的“保持設備喚醒”可以修復當設
+備休眠時傳輸速度緩慢或完全停止的問題，若
+您出現了此問題，請選中此復選框並重啟程式
+後重試。您的設備將在服務運行時保持喚醒。\n\n
+\
+由於電源以及安全性方面原因，我們建議您在使用後關閉服務。\n\n\
+\
+如果沒有如您預期的那樣正常工作，請將其反饋
+至 Pieter Pareit(pieter.pareit@gmail.com)。\n\n\
+\
+您可以通過在 Google Play 中購買支持此程式的付費版開源項目
+的後續開發。您可以訪問 https://github.com/ppareit/swiftp
+隨時查看並跟進開發進度，如果您有任何建議或想法，您可以訪問
+https://github.com/ppareit/swiftp/issues 提交您的建議。\n\n
+    </string><string name="market_version_label">市場版本</string><string name="nsd_servername_postfix">FTP Server</string><string name="unknown">未知</string><string name="about_dlg_message">
+        <b>簡介：</b>
+        FTP Server (SwiFTP) 允許在您的 Android 設備上運行文件傳輸服務器。\n\n\
+        <b>站點：</b>
+        http://ppareit.github.com/swiftp/\n\n
+        <b>維護：</b>
+        Pieter Pareit (pieter.pareit@gmail.com)\n\n
+        <b>編譯：</b>
+        Dave Revell (dave.revell@gmail.com), Pieter Pareit (pieter.pareit@gmail.com)\n\n\
+        <b>美工：</b>
+        Birgit Niemegeers\n\n
+        <b>許可：</b>
+        GNU General Public License v3.0\n\n
+</string><string name="username_label">用戶名</string><string name="running_summary_stopped">開始 FTP server</string><string name="running_summary_failed">FTP server 啟動失敗，您尚未連結到 Wi-Fi 或以太網路？</string></file><file name="preferences" path="E:\Documents\AndroidStudioProjects\Sdf\swiFTPLib\src\main\res\xml\preferences.xml" qualifiers="" type="xml"/><file name="widget_info" path="E:\Documents\AndroidStudioProjects\Sdf\swiFTPLib\src\main\res\xml\widget_info.xml" qualifiers="" type="xml"/></source><source path="E:\Documents\AndroidStudioProjects\Sdf\swiFTPLib\build\generated\res\rs\debug"/><source path="E:\Documents\AndroidStudioProjects\Sdf\swiFTPLib\build\generated\res\resValues\debug"/></dataSet><dataSet config="debug" generated-set="debug$Generated"><source path="E:\Documents\AndroidStudioProjects\Sdf\swiFTPLib\src\debug\res"/></dataSet><mergedItems/></merger>

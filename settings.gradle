@@ -1,0 +1,2 @@
+include ':app', ':opengl', ':vpn', ':senser', ':wallpaper', ':vpn_c', ':viewtest', ':localvp'
+include ':swiFTPLib'
