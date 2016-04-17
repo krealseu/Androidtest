@@ -1,8 +1,7 @@
 package org.kreal.viewtest;
 
-import android.app.Activity;
-import android.content.Intent;
-import android.media.TimedText;
+
+import android.content.res.Resources;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
@@ -10,15 +9,19 @@ import android.os.Message;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.GestureDetector;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.VideoView;
+
+import com.google.android.gms.identity.intents.AddressConstants;
 
 import java.io.File;
 import java.text.DateFormat;
@@ -27,7 +30,7 @@ import java.util.Date;
 import java.util.Objects;
 
 
-public class VideoFragment extends Fragment implements Handler.Callback{
+public class VideoFragment extends Fragment implements Handler.Callback ,View.OnClickListener{
 
     private static final String TAG = "ViewTest";
     private VideoView mVideoPlay = null;
@@ -39,6 +42,7 @@ public class VideoFragment extends Fragment implements Handler.Callback{
     private TextView currentTime;
     private TextView allTime;
     private ImageButton btnBack;
+    private ImageButton mPause;
 
     private final int ViedoControlCode=0x0E;
     private final String DoubleTap="DOUBLETAP";
@@ -51,13 +55,22 @@ public class VideoFragment extends Fragment implements Handler.Callback{
 
     private Uri videosource=null;
     private int mVideoCurrentPlay=0;
+    private boolean isFullScreen=false;
+
     private boolean mResumeIsPlaying=true;
-    private int mResumeControlPannlIsVisiable=View.VISIBLE;
+    private int mResumeControlPannlIsVisiable=View.INVISIBLE;
 
     private final Runnable mHideRunnable=new Runnable() {
         @Override
         public void run() {
             hide();
+        }
+    };
+
+    private final Runnable mHidePauseRunable=new Runnable() {
+        @Override
+        public void run() {
+            mPause.setVisibility(View.INVISIBLE);
         }
     };
 
@@ -107,13 +120,6 @@ public class VideoFragment extends Fragment implements Handler.Callback{
                 return true;
             }
         });
-        // shi ping
-        full_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivityForResult(new Intent().setAction(Intent.ACTION_GET_CONTENT).setType("video/*"), 1);
-            }
-        });
         seekBar.setOnSeekBarChangeListener(new SeekBarChangeEvent());
         Log.i(TAG, "creatviewfinal");
         return view;
@@ -127,23 +133,13 @@ public class VideoFragment extends Fragment implements Handler.Callback{
         currentTime=(TextView)v.findViewById(R.id.bottom_time_current);
         allTime=(TextView)v.findViewById(R.id.bottom_time);
         btnBack=(ImageButton)v.findViewById(R.id.bottom_back);
-        btnBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                getActivity().onBackPressed();
-            }
-        });
-        seekBar.setMax(1000);
-    }
+        mPause=(ImageButton)v.findViewById(R.id.play_pause);
+        mPause.setVisibility(View.INVISIBLE);
 
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if(resultCode== Activity.RESULT_OK) {
-            videosource = data.getData();
-            mVideoPlay.setVideoURI(data.getData());
-            mVideoPlay.start();
-        }
+        mPause.setOnClickListener(this);
+        btnBack.setOnClickListener(this);
+        full_button.setOnClickListener(this);
+        seekBar.setMax(2000);
     }
 
     @Override
@@ -164,19 +160,28 @@ public class VideoFragment extends Fragment implements Handler.Callback{
         mVideoCurrentPlay=mVideoPlay.getCurrentPosition();
         mResumeIsPlaying=mVideoPlay.isPlaying();
         mResumeControlPannlIsVisiable=mControlPannel.getVisibility();
+        Log.i(TAG, "onpause"+mResumeControlPannlIsVisiable);
     }
 
     @Override
     public void onResume() {
         super.onResume();
         Log.i(TAG, "onResum");
-        mVideoPlay.setVideoURI(videosource);
-        mVideoPlay.seekTo(mVideoCurrentPlay);
+        if(videosource!=null) {
+            mVideoPlay.setVideoURI(videosource);
+            mVideoPlay.seekTo(mVideoCurrentPlay);
+        }
         if(mResumeIsPlaying)
             mVideoPlay.start();
         else mVideoPlay.pause();
-        mControlPannel.setVisibility(mResumeControlPannlIsVisiable);
-        hander.postDelayed(mUpdateSkbRunable, 100);
+        Log.i(TAG, "Resume "+mResumeControlPannlIsVisiable);
+        if(mResumeControlPannlIsVisiable==View.VISIBLE){
+            Log.i(TAG, "Resumeplay");
+            hander.post(mShowRunable);
+            //hander.postDelayed(mUpdateSkbRunable, mHideDelay);
+        }
+        else hander.post(mHideRunnable);
+        //hander.postDelayed(mUpdateSkbRunable, 100);
     }
 
     @Override
@@ -189,12 +194,15 @@ public class VideoFragment extends Fragment implements Handler.Callback{
     }
 
     void handerVideo(String data){
-        Log.i(TAG,data);
+        Log.i(TAG, data);
         if(Objects.equals(data, DoubleTap)) {
             if (mVideoPlay.isPlaying()) {
                 mVideoPlay.pause();
+                mResumeIsPlaying=false;
+                hander.post(mShowRunable);
             } else {
                 mVideoPlay.start();
+                hander.post(mHideRunnable);
             }
         }
         if(Objects.equals(data, SingleTap)){
@@ -206,21 +214,48 @@ public class VideoFragment extends Fragment implements Handler.Callback{
     }
 
     void hide(){
-        mControlPannel.setVisibility(View.GONE);
+        if(isFullScreen) {
+            getView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LOW_PROFILE
+                    | View.SYSTEM_UI_FLAG_FULLSCREEN
+                    | View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                    | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+                    | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                    | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
+        }
+        mControlPannel.setVisibility(View.INVISIBLE);
+        if(mVideoPlay.isPlaying()||mResumeIsPlaying){
+            mPause.setVisibility(View.INVISIBLE);
+            mPause.setImageDrawable(getResources().getDrawable(R.drawable.mr_ic_pause_dark));
+        }
+        else {
+            mPause.setVisibility(View.VISIBLE);
+            mPause.setImageDrawable(getResources().getDrawable(R.drawable.mr_ic_play_dark));
+        }
         hander.removeCallbacks(mShowRunable);
     }
+
     void show(){
-        mControlPannel.setVisibility(View.VISIBLE);
         hander.removeCallbacks(mHideRunnable);
-        hander.postDelayed(mHideRunnable, mHideDelay);
+        if(isFullScreen) {
+            getView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                    | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION);
+            mControlPannel.setPadding(0, getStatusBarHeight(), 0, 0);
+        }
+        else mControlPannel.setPadding(0,0,0,0);
+        mControlPannel.setVisibility(View.VISIBLE);
+        mPause.setVisibility(View.VISIBLE);
+        if(mVideoPlay.isPlaying()||mResumeIsPlaying)
+            mPause.setImageDrawable(getResources().getDrawable(R.drawable.mr_ic_pause_dark));
+        else mPause.setImageDrawable(getResources().getDrawable(R.drawable.mr_ic_play_dark));
         hander.post(mUpdateSkbRunable);
     }
+
     void updateSkb(){
+        long lo= (long) seekBar.getMax() * mVideoPlay.getCurrentPosition() /mVideoPlay.getDuration();
+        seekBar.setProgress((int) lo);
+        currentTime.setText(getTimeIntToString(mVideoPlay.getCurrentPosition()));
+        allTime.setText(getTimeIntToString(mVideoPlay.getDuration()));
         if(mControlPannel.getVisibility()==View.VISIBLE){
-            long lo= (long) seekBar.getMax() * mVideoPlay.getCurrentPosition() /mVideoPlay.getDuration();
-            seekBar.setProgress((int) lo);
-            currentTime.setText(getTimeIntToString(mVideoPlay.getCurrentPosition()));
-            allTime.setText(getTimeIntToString(mVideoPlay.getDuration()));
             hander.postDelayed(mUpdateSkbRunable, 100);
         }
         //else
@@ -235,10 +270,53 @@ public class VideoFragment extends Fragment implements Handler.Callback{
         return stime;
     }
 
+    private int getStatusBarHeight() {
+        Resources resources = getActivity().getResources();
+        int resourceId = resources.getIdentifier("status_bar_height", "dimen","android");
+        int height = resources.getDimensionPixelSize(resourceId);
+        return height;
+    }
+
     public void play(Uri uri){
+        Log.i(TAG, "playvideo");
         videosource=uri;
         mVideoPlay.setVideoURI(videosource);
         mVideoPlay.start();
+    }
+
+    public void setFullScreen(){
+        isFullScreen=true;
+    }
+    @Override
+    public void onClick(View v) {
+        if(v==mPause) {
+            if (mVideoPlay.isPlaying()) {
+                mVideoPlay.pause();
+                hander.post(mShowRunable);
+            } else
+            {
+                mVideoPlay.start();
+                hander.postDelayed(mHideRunnable,100);
+            }
+            return;
+        }
+        if(v==btnBack){
+            getActivity().onBackPressed();
+            return;
+        }
+        if(v==full_button){
+            if(mVideoPlay.getLayoutParams().height==ViewGroup.LayoutParams.MATCH_PARENT) {
+                FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+                layoutParams.gravity = Gravity.CENTER;
+                mVideoPlay.setLayoutParams(layoutParams);
+            }
+            else {
+                FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+                layoutParams.gravity = Gravity.CENTER;
+                mVideoPlay.setLayoutParams(layoutParams);
+            }
+            return;
+        }
     }
 
     class SeekBarChangeEvent implements SeekBar.OnSeekBarChangeListener {

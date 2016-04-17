@@ -3,6 +3,8 @@ package com.example.kreal.opengl;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.media.MediaCodec;
+import android.media.MediaCodecList;
 import android.opengl.GLSurfaceView;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
@@ -273,8 +275,8 @@ public class LessonOneRenderer implements GLSurfaceView.Renderer {
 
         // Draw the triangle facing straight on.
         Matrix.setIdentityM(mModelMatrix, 0);
-        Matrix.translateM(mModelMatrix, 0, x, y, 0.0f);
-//        Matrix.rotateM(mModelMatrix, 0, angleInDegrees, 0.0f, 0.0f, 1.0f);
+        Matrix.translateM(mModelMatrix, 0, 0, 0, 0.0f);
+        Matrix.rotateM(mModelMatrix, 0, angleInDegrees, 0.0f, 0.0f, 1.0f);
         drawTriangle(mTriangle1Vertices);
 
         // Draw one translated a bit down and rotated to be flat on the ground.

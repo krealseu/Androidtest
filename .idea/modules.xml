@@ -3,14 +3,18 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Sdf.iml" filepath="$PROJECT_DIR$/Sdf.iml" />
+      <module fileurl="file://$PROJECT_DIR$/aFileChooser/aFileChooser.iml" filepath="$PROJECT_DIR$/aFileChooser/aFileChooser.iml" />
+      <module fileurl="file://$PROJECT_DIR$/akvideoplayer/akvideoplayer.iml" filepath="$PROJECT_DIR$/akvideoplayer/akvideoplayer.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/localvp/localvp.iml" filepath="$PROJECT_DIR$/localvp/localvp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lib/lib.iml" filepath="$PROJECT_DIR$/lib/lib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mt/mt.iml" filepath="$PROJECT_DIR$/mt/mt.iml" />
       <module fileurl="file://$PROJECT_DIR$/opengl/opengl.iml" filepath="$PROJECT_DIR$/opengl/opengl.iml" />
       <module fileurl="file://$PROJECT_DIR$/senser/senser.iml" filepath="$PROJECT_DIR$/senser/senser.iml" />
       <module fileurl="file://$PROJECT_DIR$/swiFTPLib/swiFTPLib.iml" filepath="$PROJECT_DIR$/swiFTPLib/swiFTPLib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/videotest/videotest.iml" filepath="$PROJECT_DIR$/videotest/videotest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/videotest2/videotest2.iml" filepath="$PROJECT_DIR$/videotest2/videotest2.iml" />
       <module fileurl="file://$PROJECT_DIR$/viewtest/viewtest.iml" filepath="$PROJECT_DIR$/viewtest/viewtest.iml" />
       <module fileurl="file://$PROJECT_DIR$/vpn/vpn.iml" filepath="$PROJECT_DIR$/vpn/vpn.iml" />
-      <module fileurl="file://$PROJECT_DIR$/vpn_c/vpn_c.iml" filepath="$PROJECT_DIR$/vpn_c/vpn_c.iml" />
       <module fileurl="file://$PROJECT_DIR$/wallpaper/wallpaper.iml" filepath="$PROJECT_DIR$/wallpaper/wallpaper.iml" />
     </modules>
   </component>

@@ -14,6 +14,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
+import java.nio.IntBuffer;
 
 
 /**
@@ -123,7 +124,8 @@ public class GLhelp {
                     GLES20.GL_CLAMP_TO_EDGE);
             GLES20.glTexParameteri(GLES20.GL_TEXTURE_2D, GLES20.GL_TEXTURE_WRAP_T,
                     GLES20.GL_CLAMP_TO_EDGE);
-
+            IntBuffer texBuf = IntBuffer.allocate(1);
+            //GLES20.glGenBuffers(1,texBuf);
             //绑定纹理数据,传入指定图片
             GLUtils.texImage2D(GLES20.GL_TEXTURE_2D, 0, bitmap, 0);
             bitmap.recycle();

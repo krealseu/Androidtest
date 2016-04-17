@@ -41,7 +41,12 @@
                 <data android:mimeType="video/*" />
             </intent-filter>
         </activity>
-        <activity android:name=".Main2Activity"></activity>
+        <activity android:name=".Main2Activity" />
+        <activity
+            android:name=".FullscreenActivity2"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_fullscreen2"
+            android:theme="@style/FullscreenTheme"></activity>
     </application>
 
 </manifest>

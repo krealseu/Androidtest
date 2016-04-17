@@ -20,7 +20,7 @@
             android:orientation="horizontal"
             android:layout_alignParentTop="true"
             android:layout_alignParentStart="true"
-            android:background="#C0000000"
+            android:background="#10000000"
             android:gravity="center"
             android:minHeight="42dp"
             android:id="@+id/linearLayout">
@@ -28,13 +28,21 @@
             <ImageButton
                 android:id="@+id/bottom_back"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_gravity="center"
-                android:paddingLeft="4dip"
-                android:paddingRight="4dip"
+                android:minWidth="42dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
                 android:background="@null"
-                android:src="@drawable/video_top_back"
+                android:src="@drawable/abc_ic_ab_back_mtrl_am_alpha"
                 />
+
+            <View
+                android:layout_width="2dp"
+                android:layout_height="match_parent"
+                android:background="#b0ffffff"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -63,26 +71,26 @@
             android:orientation="horizontal"
             android:layout_alignParentBottom="true"
             android:layout_alignParentStart="true"
-            android:background="#C0000000"
+            android:background="@drawable/background_color"
             android:gravity="center"
-            android:minHeight="42dp">
+            android:minHeight="60dp">
 
             <TextView
                 android:id="@+id/bottom_time_current"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:paddingRight="4dip"
+                android:layout_marginLeft="4dp"
                 android:text="00:00"
                 android:textColor="@android:color/white"
-                android:textSize="14sp"
-                android:textStyle="bold" />
+                android:textSize="20sp"
+                android:textStyle="normal" />
 
             <SeekBar
                 android:id="@+id/bottom_seekbar"
                 style="?android:attr/progressBarStyleHorizontal"
-                android:layout_width="0dip"
-                android:layout_height="32dip"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_weight="1" />
 
@@ -92,11 +100,10 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_marginRight="4dp"
-                android:paddingLeft="4dip"
                 android:text="00:00"
                 android:textColor="@android:color/white"
-                android:textSize="14sp"
-                android:textStyle="bold" />
+                android:textSize="20sp"
+                android:textStyle="normal" />
 
             <ImageButton
                 android:id="@+id/bottom_fullscreen"
@@ -104,10 +111,18 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:background="@null"
-                android:src="@drawable/ic_media_fullscreen_stretch"
+                android:src="@drawable/abc_ratingbar_full_material"
                 />
         </LinearLayout>
 
     </RelativeLayout>
+
+    <ImageButton
+        android:id="@+id/play_pause"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/background_circular"
+        android:src="@drawable/mr_ic_pause_dark"/>
 
 </FrameLayout>
