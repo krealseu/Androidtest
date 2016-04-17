@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "E:\\Documents\\AndroidStudioProjects\\Sdf\\aFileChooser\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-v11\\values-v11.xml",
+        "outputFile": "/home/accelerator/Documents/AndroidStudioProjects/Sdf/aFileChooser/build/intermediates/res/merged/androidTest/debug/values-v11/values-v11.xml",
         "map": [
             {
                 "to": {
@@ -11,7 +11,31 @@
                     "endOffset": 104
                 },
                 "from": {
-                    "file": "E:\\Documents\\AndroidStudioProjects\\Sdf\\aFileChooser\\build\\intermediates\\bundles\\debug\\res\\values-v11\\values-v11.xml",
+                    "file": "/home/accelerator/Documents/AndroidStudioProjects/Sdf/aFileChooser/build/intermediates/bundles/debug/res/values-v11/values-v11.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endColumn": 53,
+                        "endOffset": 104
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "outputFile": "/home/accelerator/Documents/AndroidStudioProjects/Sdf/E:\\Documents\\AndroidStudioProjects\\Sdf\\aFileChooser\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-v11\\values-v11.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 53,
+                    "endOffset": 104
+                },
+                "from": {
+                    "file": "/home/accelerator/Documents/AndroidStudioProjects/Sdf/E:\\Documents\\AndroidStudioProjects\\Sdf\\aFileChooser\\build\\intermediates\\bundles\\debug\\res\\values-v11\\values-v11.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,

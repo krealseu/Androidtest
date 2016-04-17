@@ -165,7 +165,7 @@ void native_seekTo(JNIEnv *env, jobject instance , jint pos) {
 static JNINativeMethod const gMethods[] =
         {
                 {"native_init",   "()V", (void *) Java_org_kreal_ccffmpeg_ccFFmpeg_native_1init},
-                {"loadfile",      "(jstring)I", (void *) Java_org_kreal_ccffmpeg_ccFFmpeg_loadfile},
+                {"loadfile",      "(Ljava/lang/String;)I", (void *) Java_org_kreal_ccffmpeg_ccFFmpeg_loadfile},
                 {"getByteBuffer", "()Ljava/nio/ByteBuffer;",                      (void *) Java_org_kreal_ccffmpeg_ccFFmpeg_getByteBuffer},
                 {"decoderOne",    "()I",   (void *) Java_org_kreal_ccffmpeg_ccFFmpeg_decoderOne},
                 {"native_getVideoWidth","()I",(void *) native_getVideoWidth},

@@ -1,18 +1,34 @@
 [
     {
-        "merged": "E:\\Documents\\AndroidStudioProjects\\Sdf\\aFileChooser\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\ic_file.png",
-        "source": "E:\\Documents\\AndroidStudioProjects\\Sdf\\aFileChooser\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\ic_file.png"
+        "merged": "/home/accelerator/Documents/AndroidStudioProjects/Sdf/aFileChooser/build/intermediates/res/merged/androidTest/debug/drawable-xhdpi-v4/ic_folder.png",
+        "source": "/home/accelerator/Documents/AndroidStudioProjects/Sdf/aFileChooser/build/intermediates/bundles/debug/res/drawable-xhdpi-v4/ic_folder.png"
     },
     {
-        "merged": "E:\\Documents\\AndroidStudioProjects\\Sdf\\aFileChooser\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\ic_chooser.png",
-        "source": "E:\\Documents\\AndroidStudioProjects\\Sdf\\aFileChooser\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\ic_chooser.png"
+        "merged": "/home/accelerator/Documents/AndroidStudioProjects/Sdf/aFileChooser/build/intermediates/res/merged/androidTest/debug/drawable-xhdpi-v4/ic_provider.png",
+        "source": "/home/accelerator/Documents/AndroidStudioProjects/Sdf/aFileChooser/build/intermediates/bundles/debug/res/drawable-xhdpi-v4/ic_provider.png"
     },
     {
-        "merged": "E:\\Documents\\AndroidStudioProjects\\Sdf\\aFileChooser\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\ic_provider.png",
-        "source": "E:\\Documents\\AndroidStudioProjects\\Sdf\\aFileChooser\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\ic_provider.png"
+        "merged": "/home/accelerator/Documents/AndroidStudioProjects/Sdf/E:\\Documents\\AndroidStudioProjects\\Sdf\\aFileChooser\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\ic_file.png",
+        "source": "/home/accelerator/Documents/AndroidStudioProjects/Sdf/E:\\Documents\\AndroidStudioProjects\\Sdf\\aFileChooser\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\ic_file.png"
     },
     {
-        "merged": "E:\\Documents\\AndroidStudioProjects\\Sdf\\aFileChooser\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\ic_folder.png",
-        "source": "E:\\Documents\\AndroidStudioProjects\\Sdf\\aFileChooser\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\ic_folder.png"
+        "merged": "/home/accelerator/Documents/AndroidStudioProjects/Sdf/E:\\Documents\\AndroidStudioProjects\\Sdf\\aFileChooser\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\ic_chooser.png",
+        "source": "/home/accelerator/Documents/AndroidStudioProjects/Sdf/E:\\Documents\\AndroidStudioProjects\\Sdf\\aFileChooser\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\ic_chooser.png"
+    },
+    {
+        "merged": "/home/accelerator/Documents/AndroidStudioProjects/Sdf/E:\\Documents\\AndroidStudioProjects\\Sdf\\aFileChooser\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\ic_provider.png",
+        "source": "/home/accelerator/Documents/AndroidStudioProjects/Sdf/E:\\Documents\\AndroidStudioProjects\\Sdf\\aFileChooser\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\ic_provider.png"
+    },
+    {
+        "merged": "/home/accelerator/Documents/AndroidStudioProjects/Sdf/E:\\Documents\\AndroidStudioProjects\\Sdf\\aFileChooser\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\ic_folder.png",
+        "source": "/home/accelerator/Documents/AndroidStudioProjects/Sdf/E:\\Documents\\AndroidStudioProjects\\Sdf\\aFileChooser\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\ic_folder.png"
+    },
+    {
+        "merged": "/home/accelerator/Documents/AndroidStudioProjects/Sdf/aFileChooser/build/intermediates/res/merged/androidTest/debug/drawable-xhdpi-v4/ic_file.png",
+        "source": "/home/accelerator/Documents/AndroidStudioProjects/Sdf/aFileChooser/build/intermediates/bundles/debug/res/drawable-xhdpi-v4/ic_file.png"
+    },
+    {
+        "merged": "/home/accelerator/Documents/AndroidStudioProjects/Sdf/aFileChooser/build/intermediates/res/merged/androidTest/debug/drawable-xhdpi-v4/ic_chooser.png",
+        "source": "/home/accelerator/Documents/AndroidStudioProjects/Sdf/aFileChooser/build/intermediates/bundles/debug/res/drawable-xhdpi-v4/ic_chooser.png"
     }
 ]
