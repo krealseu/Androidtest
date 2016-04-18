@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <VideoView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/videoView"
+        android:layout_gravity="center"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/video_control_pannel"
+        android:layout_gravity="center">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:background="#10000000"
+            android:gravity="center"
+            android:minHeight="42dp"
+            android:id="@+id/linearLayout">
+
+            <ImageButton
+                android:id="@+id/bottom_back"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:minWidth="42dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                android:background="@null"
+                android:src="@drawable/abc_ic_ab_back_mtrl_am_alpha"
+                />
+
+            <View
+                android:layout_width="2dp"
+                android:layout_height="match_parent"
+                android:background="#b0ffffff"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Video Test"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textColor="@android:color/white"
+                android:id="@+id/textView" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/CheckBox"
+                android:textColor="@android:color/white"
+                android:text="软解"
+                android:scrollbarStyle="outsideOverlay"
+                android:checked="true" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:background="@drawable/background_color"
+            android:gravity="center"
+            android:minHeight="60dp">
+
+            <TextView
+                android:id="@+id/bottom_time_current"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="4dp"
+                android:text="00:00"
+                android:textColor="@android:color/white"
+                android:textSize="20sp"
+                android:textStyle="normal" />
+
+            <SeekBar
+                android:id="@+id/bottom_seekbar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/bottom_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="4dp"
+                android:text="00:00"
+                android:textColor="@android:color/white"
+                android:textSize="20sp"
+                android:textStyle="normal" />
+
+            <ImageButton
+                android:id="@+id/bottom_fullscreen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:background="@null"
+                android:src="@drawable/abc_ratingbar_full_material"
+                />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <ImageButton
+        android:id="@+id/play_pause"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/background_circular"
+        android:src="@drawable/mr_ic_pause_dark"/>
+
+</FrameLayout>

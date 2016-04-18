@@ -1,0 +1,3 @@
+include ':app', ':opengl', ':vpn', ':senser', ':wallpaper', ':viewtest', ':akvideoplayer', ':videotest', ':lib', ':mt', ':videotest2'
+include ':swiFTPLib'
+include ':aFileChooser'
