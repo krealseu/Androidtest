@@ -36,5 +36,5 @@ dependencies {
 }
 
 task ndkbuild(type:Exec){                                //新建ndkbuild任务在android外，类型为执行   还有copy之类
-    commandLine 'ndk-build','-C','src/main/jni'             //执行ndk-build     windows要加.cmd
+    commandLine 'ndk-build.cmd','-C','src/main/jni'             //执行ndk-build     windows要加.cmd
 }

@@ -36,10 +36,12 @@ void VideoDecodeInit(AVCodecContext *pCodecCtx) {
     pFrame = av_frame_alloc();
     pFrameYUV = av_malloc(sizeof(AVPicture));
     buffen_len = avpicture_get_size(AV_PIX_FMT_YUV420P, pCodecCtx->width, pCodecCtx->height);
-    out_buffer = (uint8_t *) av_malloc(
-            avpicture_get_size(AV_PIX_FMT_YUV420P, pCodecCtx->width, pCodecCtx->height));
-    avpicture_fill((AVPicture *) pFrameYUV, out_buffer, AV_PIX_FMT_YUV420P, pCodecCtx->width,
-                   pCodecCtx->height);
+    out_buffer = (uint8_t *) av_malloc(avpicture_get_size(AV_PIX_FMT_YUV420P, pCodecCtx->width, pCodecCtx->height));
+    avpicture_fill((AVPicture *) pFrameYUV, out_buffer, AV_PIX_FMT_YUV420P, pCodecCtx->width,pCodecCtx->height);
+    if(AV_PIX_FMT_YUV420P==pCodecCtx->pix_fmt)
+          LOGI("sds");
+          else LOGI("adsf");
+          LOGI("ad1111sf");
     img_convert_ctx = sws_getContext(pCodecCtx->width, pCodecCtx->height, pCodecCtx->pix_fmt,
                                      pCodecCtx->width, pCodecCtx->height, AV_PIX_FMT_YUV420P,
                                      SWS_BICUBIC, NULL, NULL, NULL);
