@@ -49,8 +49,8 @@
         <receiver android:name=".NewAppWidget">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
-                <action android:name="org.kreal.FtpServer.ACTION_START_FTPSERVER" />
-                <action android:name="org.kreal.FtpServer.ACTION_STOP_FTPSERVER" />
+                <action android:name="org.kreal.FtpServer.FTPSERVER_STARTED" />
+                <action android:name="org.kreal.FtpServer.FTPSERVER_STOPED" />
             </intent-filter>
 
             <meta-data

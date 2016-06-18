@@ -1,21 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="64dp"
-    android:background="#d6000000">
+    android:layout_height="match_parent"
+    android:background="#d6000000"
+    android:gravity="center"
+    android:orientation="horizontal">
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:minWidth="64dp"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
         android:layout_gravity="center"
-        android:src="@android:drawable/btn_star_big_off"
-        android:id="@+id/imageView" />
+        android:id="@+id/imageView"
+        android:src="@drawable/example_picture"/>
 
     <LinearLayout
         android:orientation="vertical"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_weight="1">
 
         <TextView
@@ -39,10 +40,12 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent">
 
-        <Switch
+        <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/switch1" />
+            android:layout_gravity="center"
+            android:src="@android:drawable/ic_media_pause"
+            android:id="@+id/imageButton2" />
 
         <ImageButton
             android:layout_width="wrap_content"

@@ -23,33 +23,22 @@ public class NewAppWidget extends AppWidgetProvider {
                                 int appWidgetId) {
 
         // Construct the RemoteViews object
-        RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.new_app_widget);
-        if(FtpServerCC.getFtpServerState()==0) {
-            views.setImageViewResource(R.id.ftpWidget,R.drawable.ftpoff);
-            views.setOnClickPendingIntent(R.id.ftpWidget,PendingIntent.getBroadcast(context,0,new Intent(FtpServerCC.ACTION_START_FTPSERVER),PendingIntent.FLAG_UPDATE_CURRENT));
-        }
-        else {
-            views.setImageViewResource(R.id.ftpWidget,R.drawable.ftpon);
-            views.setOnClickPendingIntent(R.id.ftpWidget,PendingIntent.getBroadcast(context,0,new Intent(FtpServerCC.ACTION_STOP_FTPSERVER),PendingIntent.FLAG_UPDATE_CURRENT));
-        }
-        // Instruct the widget manager to update the widget
+        RemoteViews views = createview(context,FtpServerCC.getFtpServerState()==0);
         appWidgetManager.updateAppWidget(appWidgetId, views);
     }
-
+    static public  RemoteViews createview(Context context , boolean isoff){
+        RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.new_app_widget);
+        views.setImageViewResource(R.id.ftpWidget,isoff ? R.drawable.ftpoff : R.drawable.ftpon);
+        Intent intent = new Intent(isoff ? FtpServerCC.ACTION_START_FTPSERVER : FtpServerCC.ACTION_STOP_FTPSERVER );
+        views.setOnClickPendingIntent(R.id.ftpWidget,PendingIntent.getBroadcast(context,0,intent,PendingIntent.FLAG_UPDATE_CURRENT));
+        return views;
+    }
     @Override
     public void onReceive(Context context, Intent intent) {
         super.onReceive(context, intent);
         Log.v(TAG,"Update FTP Widget -- "+intent.getAction());
-        if (intent.getAction().equals(FtpServerCC.ACTION_START_FTPSERVER)||intent.getAction().equals(FtpServerCC.ACTION_STOP_FTPSERVER)) {
-            RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.new_app_widget);
-            if(FtpServerCC.getFtpServerState()==0) {
-                views.setImageViewResource(R.id.ftpWidget,R.drawable.ftpoff);
-                views.setOnClickPendingIntent(R.id.ftpWidget,PendingIntent.getBroadcast(context,0,new Intent(FtpServerCC.ACTION_START_FTPSERVER),PendingIntent.FLAG_UPDATE_CURRENT));
-            }
-            else {
-                views.setImageViewResource(R.id.ftpWidget,R.drawable.ftpon);
-                views.setOnClickPendingIntent(R.id.ftpWidget,PendingIntent.getBroadcast(context,0,new Intent(FtpServerCC.ACTION_STOP_FTPSERVER),PendingIntent.FLAG_UPDATE_CURRENT));
-            }
+        if (intent.getAction().equals(FtpServerCC.FTPSERVER_STARTED)||intent.getAction().equals(FtpServerCC.FTPSERVER_STOPED)) {
+            RemoteViews views = createview(context,FtpServerCC.getFtpServerState()==0);
             AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(context);
             appWidgetManager.updateAppWidget(new ComponentName(context, NewAppWidget.class), views);
         }
