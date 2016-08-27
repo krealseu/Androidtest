@@ -1,47 +1,51 @@
-//package org.kreal.wallpaper;
-//
-//import android.app.WallpaperManager;
-//import android.content.Intent;
-//import android.graphics.Bitmap;
-//import android.graphics.BitmapFactory;
-//import android.support.v7.app.AppCompatActivity;
-//import android.os.Bundle;
-//import android.util.Log;
-//import android.view.View;
-//import android.widget.Button;
+package org.kreal.wallpaper;
 
-//public class MainActivity extends AppCompatActivity {
-//
-//    @Override
-//    protected void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_main);
-//        findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent=new Intent(Intent.ACTION_GET_CONTENT);
-//                intent.setType("image/*");
-//                startActivityForResult(intent,0);
-//            }
-//        });
-//    }
-//
-//    @Override
-//    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-//        super.onActivityResult(requestCode, resultCode, data);
-//        switch (requestCode){
-//            case 0:{
-//                if(resultCode!=RESULT_OK) return;
-//                Intent i=WallpaperManager.getInstance(getApplicationContext()).getCropAndSetWallpaperIntent(data.getData());
-//                i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-//                startActivityForResult(i,1);
-//                break;
-//            }
-//            case 1:{
-//                finish();
-//                break;
-//            }
-//
-//        }
-//    }
-//}
+import android.app.AlarmManager;
+import android.app.PendingIntent;
+import android.app.WallpaperManager;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.view.animation.BounceInterpolator;
+import android.widget.Button;
+import android.widget.Switch;
+
+public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+    private Button button1;
+    private Button button2;
+    private Button button3;
+    private Button button4;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        findViewById(R.id.LineLayout).setBackground(WallpaperManager.getInstance(getApplicationContext()).getDrawable());
+        button1 = (Button) findViewById(R.id.button);
+        button2 = (Button) findViewById(R.id.button2);
+        button3 = (Button) findViewById(R.id.button3);
+        button4 = (Button) findViewById(R.id.button4);
+        button1.setOnClickListener(this);
+        button2.setOnClickListener(this);
+        button3.setOnClickListener(this);
+        button4.setOnClickListener(this);
+    }
+
+
+    @Override
+    public void onClick(View v) {
+        if(v==button1)
+            SwitchWapper.startService(getApplicationContext());
+        else if(v == button2)
+            SwitchWapper.stoptService(getApplicationContext());
+        else if(v == button4)
+            SwitchWapper.nextWall(getApplicationContext());
+        else if(v == button3)
+            SwitchWapper.updataImage(getApplicationContext());
+
+    }
+}

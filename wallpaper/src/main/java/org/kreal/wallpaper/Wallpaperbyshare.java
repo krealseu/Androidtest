@@ -11,9 +11,9 @@ public class Wallpaperbyshare extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Intent i= WallpaperManager.getInstance(getApplicationContext()).getCropAndSetWallpaperIntent((Uri)getIntent().getParcelableExtra(Intent.EXTRA_STREAM));
-        i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        startActivity(i);
+//        Intent i= WallpaperManager.getInstance(getApplicationContext()).getCropAndSetWallpaperIntent((Uri)getIntent().getParcelableExtra(Intent.EXTRA_STREAM));
+//        i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+//        startActivity(i);
         finish();
     }
 }
