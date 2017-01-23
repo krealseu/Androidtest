@@ -10,33 +10,17 @@ import android.net.wifi.WifiManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.util.Log;
 import android.widget.Toast;
 
 
-public class MainActivity extends Activity implements Handler.Callback{
+public class MainActivity extends Activity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 //        setContentView(R.layout.activity_main);
-        ConnectivityManager connectivityManager=(ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
-        if (connectivityManager.getActiveNetworkInfo()!=null){
-            GetMima getMima = new GetMima();
-            getMima.setHander(new Handler(this));
-            new Thread(getMima).start();
-            Intent i = new Intent("android.net.vpn.SETTINGS");
-            i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            getApplicationContext().startActivity(new Intent(i));
-        }
-        else Toast.makeText(getApplicationContext(),"Net >_<",Toast.LENGTH_SHORT).show();
+        startService(OneHourVPN.getIntent(getApplicationContext()));
         finish();
     }
 
-    @Override
-    public boolean handleMessage(Message msg) {
-        String mima=msg.getData().getString("mima");
-        Toast.makeText(getApplicationContext(),"SECRET:"+mima.trim(),Toast.LENGTH_SHORT).show();
-        ClipboardManager clipboardManager=(ClipboardManager)getSystemService(Context.CLIPBOARD_SERVICE);
-        clipboardManager.setPrimaryClip(ClipData.newPlainText("mima", mima.trim()));
-        return false;
-    }
 }

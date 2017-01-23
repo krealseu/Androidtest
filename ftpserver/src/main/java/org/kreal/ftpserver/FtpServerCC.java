@@ -1,155 +1,153 @@
 package org.kreal.ftpserver;
 
-import android.app.Service;
-import android.content.Context;
-import android.content.Intent;
-import android.net.wifi.WifiInfo;
-import android.net.wifi.WifiManager;
-import android.os.Environment;
-import android.os.IBinder;
+
+import android.nfc.Tag;
 import android.util.Log;
 
 import org.apache.ftpserver.FtpServer;
 import org.apache.ftpserver.FtpServerFactory;
+import org.apache.ftpserver.ftplet.Authority;
+import org.apache.ftpserver.ftplet.DefaultFtplet;
+import org.apache.ftpserver.ftplet.FileSystemFactory;
+import org.apache.ftpserver.ftplet.FileSystemView;
 import org.apache.ftpserver.ftplet.FtpException;
+import org.apache.ftpserver.ftplet.FtpFile;
+import org.apache.ftpserver.ftplet.Ftplet;
+import org.apache.ftpserver.ftplet.User;
+import org.apache.ftpserver.ftplet.UserManager;
 import org.apache.ftpserver.listener.ListenerFactory;
 import org.apache.ftpserver.usermanager.PropertiesUserManagerFactory;
 import org.apache.ftpserver.usermanager.impl.BaseUser;
+import org.apache.ftpserver.usermanager.impl.WritePermission;
 
 import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
-public class FtpServerCC extends Service {
+/**
+ * Created by lthee on 2016/10/3.
+ */
+public class FtpServerCC {
     static final String TAG = FtpServerCC.class.getSimpleName();
-    private static FtpServer ftpServer = null;
-    private static Context mContext = null;
-    static public final String ACTION_START_FTPSERVER = "org.kreal.FtpServer.ACTION_START_FTPSERVER";
-    static public final String ACTION_STOP_FTPSERVER = "org.kreal.FtpServer.ACTION_STOP_FTPSERVER";
-    static public final String ACTION_PAUSE_FTPSERVER = "org.kreal.FtpServer.ACTION_PAUSE_FTPSERVER";
-    static public final String ACTION_RESUME_FTPSERVER = "org.kreal.FtpServer.ACTION_RESUME_FTPSERVER";
-    static public final String FTPSERVER_STARTED = "org.kreal.FtpServer.FTPSERVER_STARTED";
-    static public final String FTPSERVER_STOPED = "org.kreal.FtpServer.FTPSERVER_STOPED";
+    private FtpServer mftpServer = null;
+    private UserManager mUserManager= new PropertiesUserManagerFactory().createUserManager();;
+    private FileSystemFactory mfileSystemFactory = null;
+    private int mPort = 2121;
+    private Ftplet mFtplet = null;
+    private String mAddress = null;
+    static private FtpServerCC mInstance = null;
 
-    public FtpServerCC() {
-    }
-
-    public static void FTPServerPause(){
-        if(ftpServer!=null)
-            ftpServer.suspend();
-        Intent receiver = new Intent(FTPSERVER_STARTED);
-        mContext.sendBroadcast(receiver);
-    }
-    public static void FTPServerResume(){
-        if(ftpServer!=null)
-            ftpServer.resume();
-        Intent receiver = new Intent(FTPSERVER_STARTED);
-        mContext.sendBroadcast(receiver);
-    }
-    public static int getFtpServerState()
-    {
-        if(ftpServer==null)
-            return 0;
-        else if(ftpServer.isSuspended())
-            return 2;
-        else return 1;
-    }
-    public static String int2ip(int ipInt) {
-        StringBuilder sb = new StringBuilder();
-        sb.append(ipInt & 0xFF).append(".");
-        sb.append((ipInt >> 8) & 0xFF).append(".");
-        sb.append((ipInt >> 16) & 0xFF).append(".");
-        sb.append((ipInt >> 24) & 0xFF);
-        return sb.toString();
-    }
-    public static String getLocalIpAddress(Context context) {
-        try {
-            WifiManager wifiManager = (WifiManager) context
-                    .getSystemService(Context.WIFI_SERVICE);
-            WifiInfo wifiInfo = wifiManager.getConnectionInfo();
-            int i = wifiInfo.getIpAddress();
-            return int2ip(i);
-        } catch (Exception ex) {
-            return " 获取IP出错鸟!!!!请保证是WIFI,或者请重新打开网络!\n" + ex.getMessage();
+    static public FtpServerCC getInstance(){
+        if(mInstance == null) {
+            mInstance = new FtpServerCC();
         }
-        // return null;
-    }
-    @Override
-    public IBinder onBind(Intent intent) {
-        // TODO: Return the communication channel to the service.
-        throw new UnsupportedOperationException("Not yet implemented");
+        return mInstance;
     }
 
-    @Override
-    public int onStartCommand(Intent intent, int flags, int startId) {
-        mContext = getApplication();
-        if (ftpServer != null) {
-            if((ftpServer.isStopped()||ftpServer.isSuspended())){
-                Log.v(TAG, "Ftp Server Resuming");
-                ftpServer.resume();
-                Intent receiver = new Intent(FTPSERVER_STARTED);
-                sendBroadcast(receiver);
-                return START_STICKY;
-            }
-            else{
-                Log.v(TAG, "Ftp Server is Started");
-                return START_STICKY;
-            }
+    private  FtpServerCC() {
+    }
+
+    public boolean adduser(String name, String password, String root, boolean write){
+        BaseUser baseUser = new BaseUser();
+        baseUser.setName(name);
+        if (password != null)
+            baseUser.setPassword(password);
+        baseUser.setHomeDirectory(root);
+        if (write){
+            List<Authority> authorities = new ArrayList<Authority>();
+            authorities.add(new WritePermission());
+            baseUser.setAuthorities(authorities);
         }
-        ftpServer = createftp(2121);
         try {
-            ftpServer.start();
-            Log.v(TAG, "Start New Ftp Server");
-            Intent receiver = new Intent(FTPSERVER_STARTED);
-            sendBroadcast(receiver);
-            return START_STICKY;
+            mUserManager.save(baseUser);
+            return true;
         } catch (FtpException e) {
             e.printStackTrace();
-            Log.v(TAG, "Start Ftp Server Failed  >_<");
-            onDestroy();
+            return false;
         }
-        return START_STICKY;
     }
-    private FtpServer createftp(int port){
-        FtpServerFactory serverFactory = new FtpServerFactory();
 
-        PropertiesUserManagerFactory userManagerFactory = new PropertiesUserManagerFactory();
-        try {
-            InputStream inputStream = getAssets().open("users.properties");
-            File temp = File.createTempFile("user",".properties");
-
-            FileOutputStream fileOutputStream = new FileOutputStream(temp);
-            byte[] buffer = new byte[1024];
-            int len = 0;
-            while (true) {
-                len = inputStream.read(buffer);
-                if (len == -1)
-                    break;
-                fileOutputStream.write(buffer, 0, len);
+    public boolean start(){
+        if (mftpServer != null) {
+            if((mftpServer.isStopped()||mftpServer.isSuspended())){
+                mftpServer.resume();
             }
-            fileOutputStream.close();
-            inputStream.close();
-            userManagerFactory.setFile(temp);
-            serverFactory.setUserManager(userManagerFactory.createUserManager());
-        } catch (IOException e) {
-            e.printStackTrace();
+            return true;
         }
+        else {
+            mftpServer = createftpserver();
+            if (mftpServer == null)
+                return false;
+            else {
+                try {
+                    mftpServer.start();
+                } catch (FtpException e) {
+                    e.printStackTrace();
+                    return false;
+                }
+                return true;
+            }
+        }
+    }
 
-        ListenerFactory factory = new ListenerFactory();
-        factory.setPort(port);
-        serverFactory.addListener("default", factory.createListener());
+    public void pause(){
+        if(mftpServer!= null)
+            mftpServer.suspend();
+    }
 
+    public void resume(){
+        if(mftpServer!= null)
+            mftpServer.resume();
+    }
+
+    public void stop(){
+        if(mftpServer!= null) {
+            mftpServer.stop();
+            mftpServer = null;
+        }
+    }
+
+    public void setFtplet(Ftplet mFtplet) {
+        this.mFtplet = mFtplet;
+    }
+
+    public void setFileSystemFactory(FileSystemFactory mfileSystemFactory) {
+        this.mfileSystemFactory = mfileSystemFactory;
+    }
+
+    public void setPort(int mPort) {
+        this.mPort = mPort;
+    }
+
+    public void setAddressPort(String mAddress , int mPort) {
+        this.mAddress = mAddress;
+        this.mPort = mPort;
+    }
+
+    private FtpServer createftpserver(){
+        FtpServerFactory serverFactory = new FtpServerFactory();
+        //服务用户管理
+        serverFactory.setUserManager(mUserManager);
+        //事件通知
+        if (mFtplet != null) {
+            Map<String, Ftplet> ftpletMap = new HashMap<String, Ftplet>();
+            ftpletMap.put(TAG, mFtplet);
+            serverFactory.setFtplets(ftpletMap);
+        }
+        //自定义文件系统
+        if (mfileSystemFactory != null)
+            serverFactory.setFileSystem(mfileSystemFactory);
+        //服务监听端口
+        ListenerFactory listenerFactory = new ListenerFactory();
+        listenerFactory.setPort(mPort);
+        if (mAddress != null)
+            listenerFactory.setServerAddress(mAddress);
+        serverFactory.addListener("default", listenerFactory.createListener());
         return serverFactory.createServer();
     }
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-        if (ftpServer != null) {
-            ftpServer.stop();
-            ftpServer = null;
-        }
-        Intent receiver = new Intent(FTPSERVER_STOPED);
-        sendBroadcast(receiver);
-    }
+
 }
+
+

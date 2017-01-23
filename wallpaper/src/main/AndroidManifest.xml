@@ -18,24 +18,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".Wallpaperbyshare"
-            android:icon="@drawable/ic_photo_album_24dp"
-            android:label="Set Wallpaper"
-            android:noHistory="true">
-            <intent-filter>
-                <action android:name="android.intent.action.SEND" />
 
-                <category android:name="android.intent.category.DEFAULT" />
-
-                <data android:mimeType="image/*" />
-            </intent-filter>
-        </activity>
-
-        <service
-            android:name=".SwitchWapper"
-            android:enabled="true"
-            android:exported="true" />
+        <!--<service-->
+            <!--android:name=".SwitchWapper"-->
+            <!--android:enabled="true"-->
+            <!--android:exported="true" />-->
 
         <receiver android:name=".NewAppWidget">
             <intent-filter>
@@ -46,6 +33,20 @@
                 android:name="android.appwidget.provider"
                 android:resource="@xml/new_app_widget_info" />
         </receiver>
+
+        <service
+            android:name=".SwitchWallpaper"
+            android:exported="false" />
+
+        <receiver
+            android:name=".OpenReceiver"
+            android:enabled="true"
+            android:exported="true"></receiver>
+
+        <service
+            android:name=".RecevierKeeper"
+            android:enabled="true"
+            android:exported="true"></service>
     </application>
 
 </manifest>

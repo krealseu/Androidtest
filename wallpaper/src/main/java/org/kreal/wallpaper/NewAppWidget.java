@@ -16,8 +16,7 @@ public class NewAppWidget extends AppWidgetProvider {
                                 int appWidgetId) {
 
         RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.new_app_widget);
-        Intent intent = new Intent(context,SwitchWapper.class);
-        intent.setAction("NEXT");
+        Intent intent = SwitchWallpaper.getActionRandom(context);
         views.setOnClickPendingIntent(R.id.imagebutton,PendingIntent.getService(context,0,intent,PendingIntent.FLAG_UPDATE_CURRENT));
 
         // Instruct the widget manager to update the widget

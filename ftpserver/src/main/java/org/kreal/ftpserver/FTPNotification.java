@@ -72,13 +72,13 @@ public class FTPNotification {
         if(number == 1)
             builder
             .setContentTitle("FTP Server Working >>>")
-                .addAction(R.drawable.abc_ic_menu_copy_mtrl_am_alpha, "PAUSE", PendingIntent.getBroadcast(context,0,new Intent(FtpServerCC.ACTION_PAUSE_FTPSERVER), PendingIntent.FLAG_UPDATE_CURRENT))
-                .addAction(R.drawable.abc_ic_menu_copy_mtrl_am_alpha,"STOP",PendingIntent.getBroadcast(context,0,new Intent(FtpServerCC.ACTION_STOP_FTPSERVER),PendingIntent.FLAG_UPDATE_CURRENT));
+                .addAction(R.drawable.abc_ic_menu_copy_mtrl_am_alpha, "PAUSE", PendingIntent.getBroadcast(context,0,new Intent(FtpServerAndroid.ACTION_PAUSE_FTPSERVER), PendingIntent.FLAG_UPDATE_CURRENT))
+                .addAction(R.drawable.abc_ic_menu_copy_mtrl_am_alpha,"STOP",PendingIntent.getBroadcast(context,0,new Intent(FtpServerAndroid.ACTION_STOP_FTPSERVER),PendingIntent.FLAG_UPDATE_CURRENT));
         else if(number == 2)
             builder
                 .setContentTitle("FTP Serer Paused <<<")
-                .addAction(R.drawable.abc_ic_menu_copy_mtrl_am_alpha, "RESUME", PendingIntent.getBroadcast(context,0,new Intent(FtpServerCC.ACTION_RESUME_FTPSERVER), PendingIntent.FLAG_UPDATE_CURRENT))
-                .addAction(R.drawable.abc_ic_menu_copy_mtrl_am_alpha,"STOP",PendingIntent.getBroadcast(context,0,new Intent(FtpServerCC.ACTION_STOP_FTPSERVER),PendingIntent.FLAG_UPDATE_CURRENT));
+                .addAction(R.drawable.abc_ic_menu_copy_mtrl_am_alpha, "RESUME", PendingIntent.getBroadcast(context,0,new Intent(FtpServerAndroid.ACTION_RESUME_FTPSERVER), PendingIntent.FLAG_UPDATE_CURRENT))
+                .addAction(R.drawable.abc_ic_menu_copy_mtrl_am_alpha,"STOP",PendingIntent.getBroadcast(context,0,new Intent(FtpServerAndroid.ACTION_STOP_FTPSERVER),PendingIntent.FLAG_UPDATE_CURRENT));
         else
             builder
                     .setContentTitle("FTP Server Create Failed  >_<")

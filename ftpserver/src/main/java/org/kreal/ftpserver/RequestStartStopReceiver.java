@@ -17,18 +17,7 @@ public class RequestStartStopReceiver extends BroadcastReceiver {
 
         // TODO: analog code as in ServerPreferenceActivity.start/stopServer(), refactor
         try {
-            if (intent.getAction().equals(FtpServerCC.ACTION_START_FTPSERVER)) {
-                Intent serverService = new Intent(context, FtpServerCC.class);
-                context.startService(serverService);
-
-            } else if (intent.getAction().equals(FtpServerCC.ACTION_STOP_FTPSERVER)) {
-                Intent serverService = new Intent(context, FtpServerCC.class);
-                context.stopService(serverService);
-            }else if (intent.getAction().equals(FtpServerCC.ACTION_PAUSE_FTPSERVER)) {
-                FtpServerCC.FTPServerPause();
-            }else if (intent.getAction().equals(FtpServerCC.ACTION_RESUME_FTPSERVER)) {
-                FtpServerCC.FTPServerResume();
-            }
+            FtpServerAndroid.Start(context,intent.getAction());
         } catch (Exception e) {
             Log.e(TAG, "Failed to start/stop on intent " + e.getMessage());
         }

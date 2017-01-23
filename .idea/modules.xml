@@ -9,6 +9,7 @@
       <module fileurl="file://$PROJECT_DIR$/ftpserver/ftpserver.iml" filepath="$PROJECT_DIR$/ftpserver/ftpserver.iml" />
       <module fileurl="file://$PROJECT_DIR$/mt/mt.iml" filepath="$PROJECT_DIR$/mt/mt.iml" />
       <module fileurl="file://$PROJECT_DIR$/opengl/opengl.iml" filepath="$PROJECT_DIR$/opengl/opengl.iml" />
+      <module fileurl="file://$PROJECT_DIR$/photoview/photoview.iml" filepath="$PROJECT_DIR$/photoview/photoview.iml" />
       <module fileurl="file://$PROJECT_DIR$/picasso/picasso.iml" filepath="$PROJECT_DIR$/picasso/picasso.iml" />
       <module fileurl="file://$PROJECT_DIR$/senser/senser.iml" filepath="$PROJECT_DIR$/senser/senser.iml" />
       <module fileurl="file://$PROJECT_DIR$/swiFTPLib/swiFTPLib.iml" filepath="$PROJECT_DIR$/swiFTPLib/swiFTPLib.iml" />

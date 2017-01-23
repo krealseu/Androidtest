@@ -34,7 +34,7 @@ public class GetMima implements Runnable {
     @Override
     public void run() {
         try {
-            URL url = new URL("http://104.237.156.248/mm.txt");
+            URL url = new URL("http://74.207.253.106/mm.txt");
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setDoInput(true);
             connection.setDoOutput(true);

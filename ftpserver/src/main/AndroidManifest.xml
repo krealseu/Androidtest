@@ -15,16 +15,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-             <intent-filter>
-             <action android:name="android.intent.action.MAIN" />
-
-
-             <category android:name="android.intent.category.LAUNCHER" />
-             </intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
-
-        <service android:name=".FtpServerCC" />
 
         <receiver
             android:name=".RequestStartStopReceiver"
@@ -37,6 +33,7 @@
                 <action android:name="org.kreal.FtpServer.ACTION_RESUME_FTPSERVER" />
             </intent-filter>
         </receiver>
+
         <receiver
             android:name=".NotificationReceiver"
             android:enabled="true"
@@ -44,19 +41,26 @@
             <intent-filter>
                 <action android:name="org.kreal.FtpServer.FTPSERVER_STARTED" />
                 <action android:name="org.kreal.FtpServer.FTPSERVER_STOPED" />
+                <action android:name="org.kreal.FtpServer.FTPSERVER_PAUSED" />
             </intent-filter>
         </receiver>
-        <receiver android:name=".NewAppWidget">
+        <receiver android:name=".FTPAppWidget">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
                 <action android:name="org.kreal.FtpServer.FTPSERVER_STARTED" />
                 <action android:name="org.kreal.FtpServer.FTPSERVER_STOPED" />
+                <action android:name="org.kreal.FtpServer.FTPSERVER_PAUSED" />
             </intent-filter>
 
             <meta-data
                 android:name="android.appwidget.provider"
                 android:resource="@xml/new_app_widget_info" />
         </receiver>
+
+        <service
+            android:name=".FtpServerAndroid"
+            android:enabled="true"
+            android:exported="true"></service>
     </application>
 
 </manifest>

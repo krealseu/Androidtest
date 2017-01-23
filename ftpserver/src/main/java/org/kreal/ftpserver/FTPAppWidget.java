@@ -1,35 +1,31 @@
 package org.kreal.ftpserver;
 
 import android.app.PendingIntent;
-import android.app.Service;
 import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProvider;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
-import android.os.Bundle;
-import android.os.IBinder;
-import android.support.annotation.Nullable;
 import android.util.Log;
 import android.widget.RemoteViews;
 
 /**
  * Implementation of App Widget functionality.
  */
-public class NewAppWidget extends AppWidgetProvider {
-    final static String TAG = NewAppWidget.class.getSimpleName();
+public class FTPAppWidget extends AppWidgetProvider {
+    final static String TAG = FTPAppWidget.class.getSimpleName();
 
     static void updateAppWidget(Context context, AppWidgetManager appWidgetManager,
                                 int appWidgetId) {
 
         // Construct the RemoteViews object
-        RemoteViews views = createview(context,FtpServerCC.getFtpServerState()==0);
+        RemoteViews views = createview(context,true);
         appWidgetManager.updateAppWidget(appWidgetId, views);
     }
     static public  RemoteViews createview(Context context , boolean isoff){
         RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.new_app_widget);
         views.setImageViewResource(R.id.ftpWidget,isoff ? R.drawable.ftpoff : R.drawable.ftpon);
-        Intent intent = new Intent(isoff ? FtpServerCC.ACTION_START_FTPSERVER : FtpServerCC.ACTION_STOP_FTPSERVER );
+        Intent intent = new Intent(isoff ? FtpServerAndroid.ACTION_START_FTPSERVER : FtpServerAndroid.ACTION_STOP_FTPSERVER );
         views.setOnClickPendingIntent(R.id.ftpWidget,PendingIntent.getBroadcast(context,0,intent,PendingIntent.FLAG_UPDATE_CURRENT));
         return views;
     }
@@ -37,10 +33,10 @@ public class NewAppWidget extends AppWidgetProvider {
     public void onReceive(Context context, Intent intent) {
         super.onReceive(context, intent);
         Log.v(TAG,"Update FTP Widget -- "+intent.getAction());
-        if (intent.getAction().equals(FtpServerCC.FTPSERVER_STARTED)||intent.getAction().equals(FtpServerCC.FTPSERVER_STOPED)) {
-            RemoteViews views = createview(context,FtpServerCC.getFtpServerState()==0);
+        if (intent.getAction().equals(FtpServerAndroid.FTPSERVER_STARTED)||intent.getAction().equals(FtpServerAndroid.FTPSERVER_STOPED)) {
+            RemoteViews views = createview(context,intent.getAction().equals(FtpServerAndroid.FTPSERVER_STOPED));
             AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(context);
-            appWidgetManager.updateAppWidget(new ComponentName(context, NewAppWidget.class), views);
+            appWidgetManager.updateAppWidget(new ComponentName(context, FTPAppWidget.class), views);
         }
     }
 
