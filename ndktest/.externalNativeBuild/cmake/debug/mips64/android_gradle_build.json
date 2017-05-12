@@ -1,0 +1,145 @@
+
+{
+	"buildFiles" : 
+	[
+		"C:/CC/AndroidStudio/Sdf/ndktest/src/main/CPP/CMakeLists.txt",
+		"C:/CC/AndroidStudio/Sdf/ndktest/src/main/CPP/libpng/CMakeLists.txt"
+	],
+	"cFileExtensions" : [ "c" ],
+	"cleanCommands" : 
+	[
+		"C:\\CC\\Android-sdk\\cmake\\3.6.3155560\\bin\\cmake.exe --build C:\\CC\\AndroidStudio\\Sdf\\ndktest\\.externalNativeBuild\\cmake\\debug\\mips64 --target clean"
+	],
+	"cppFileExtensions" : [ "cpp" ],
+	"libraries" : 
+	{
+		"png-Debug-mips64" : 
+		{
+			"abi" : "mips64",
+			"artifactName" : "png",
+			"buildCommand" : "C:\\CC\\Android-sdk\\cmake\\3.6.3155560\\bin\\cmake.exe --build C:\\CC\\AndroidStudio\\Sdf\\ndktest\\.externalNativeBuild\\cmake\\debug\\mips64 --target png",
+			"buildType" : "debug",
+			"files" : 
+			[
+				
+				{
+					"flags" : "  --target=mips64el-none-linux-android --gcc-toolchain=C:/CC/Android-sdk/ndk-bundle/toolchains/mips64el-linux-android-4.9/prebuilt/windows-x86_64 --sysroot=C:/CC/Android-sdk/ndk-bundle/platforms/android-21/arch-mips64 -Dpng_EXPORTS  -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "C:/CC/AndroidStudio/Sdf/ndktest/src/main/CPP/libpng/png.c",
+					"workingDirectory" : "C:/CC/AndroidStudio/Sdf/ndktest/.externalNativeBuild/cmake/debug/mips64"
+				},
+				
+				{
+					"flags" : "  --target=mips64el-none-linux-android --gcc-toolchain=C:/CC/Android-sdk/ndk-bundle/toolchains/mips64el-linux-android-4.9/prebuilt/windows-x86_64 --sysroot=C:/CC/Android-sdk/ndk-bundle/platforms/android-21/arch-mips64 -Dpng_EXPORTS  -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "C:/CC/AndroidStudio/Sdf/ndktest/src/main/CPP/libpng/pngerror.c",
+					"workingDirectory" : "C:/CC/AndroidStudio/Sdf/ndktest/.externalNativeBuild/cmake/debug/mips64"
+				},
+				
+				{
+					"flags" : "  --target=mips64el-none-linux-android --gcc-toolchain=C:/CC/Android-sdk/ndk-bundle/toolchains/mips64el-linux-android-4.9/prebuilt/windows-x86_64 --sysroot=C:/CC/Android-sdk/ndk-bundle/platforms/android-21/arch-mips64 -Dpng_EXPORTS  -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "C:/CC/AndroidStudio/Sdf/ndktest/src/main/CPP/libpng/pngget.c",
+					"workingDirectory" : "C:/CC/AndroidStudio/Sdf/ndktest/.externalNativeBuild/cmake/debug/mips64"
+				},
+				
+				{
+					"flags" : "  --target=mips64el-none-linux-android --gcc-toolchain=C:/CC/Android-sdk/ndk-bundle/toolchains/mips64el-linux-android-4.9/prebuilt/windows-x86_64 --sysroot=C:/CC/Android-sdk/ndk-bundle/platforms/android-21/arch-mips64 -Dpng_EXPORTS  -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "C:/CC/AndroidStudio/Sdf/ndktest/src/main/CPP/libpng/pngmem.c",
+					"workingDirectory" : "C:/CC/AndroidStudio/Sdf/ndktest/.externalNativeBuild/cmake/debug/mips64"
+				},
+				
+				{
+					"flags" : "  --target=mips64el-none-linux-android --gcc-toolchain=C:/CC/Android-sdk/ndk-bundle/toolchains/mips64el-linux-android-4.9/prebuilt/windows-x86_64 --sysroot=C:/CC/Android-sdk/ndk-bundle/platforms/android-21/arch-mips64 -Dpng_EXPORTS  -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "C:/CC/AndroidStudio/Sdf/ndktest/src/main/CPP/libpng/pngpread.c",
+					"workingDirectory" : "C:/CC/AndroidStudio/Sdf/ndktest/.externalNativeBuild/cmake/debug/mips64"
+				},
+				
+				{
+					"flags" : "  --target=mips64el-none-linux-android --gcc-toolchain=C:/CC/Android-sdk/ndk-bundle/toolchains/mips64el-linux-android-4.9/prebuilt/windows-x86_64 --sysroot=C:/CC/Android-sdk/ndk-bundle/platforms/android-21/arch-mips64 -Dpng_EXPORTS  -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "C:/CC/AndroidStudio/Sdf/ndktest/src/main/CPP/libpng/pngread.c",
+					"workingDirectory" : "C:/CC/AndroidStudio/Sdf/ndktest/.externalNativeBuild/cmake/debug/mips64"
+				},
+				
+				{
+					"flags" : "  --target=mips64el-none-linux-android --gcc-toolchain=C:/CC/Android-sdk/ndk-bundle/toolchains/mips64el-linux-android-4.9/prebuilt/windows-x86_64 --sysroot=C:/CC/Android-sdk/ndk-bundle/platforms/android-21/arch-mips64 -Dpng_EXPORTS  -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "C:/CC/AndroidStudio/Sdf/ndktest/src/main/CPP/libpng/pngrio.c",
+					"workingDirectory" : "C:/CC/AndroidStudio/Sdf/ndktest/.externalNativeBuild/cmake/debug/mips64"
+				},
+				
+				{
+					"flags" : "  --target=mips64el-none-linux-android --gcc-toolchain=C:/CC/Android-sdk/ndk-bundle/toolchains/mips64el-linux-android-4.9/prebuilt/windows-x86_64 --sysroot=C:/CC/Android-sdk/ndk-bundle/platforms/android-21/arch-mips64 -Dpng_EXPORTS  -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "C:/CC/AndroidStudio/Sdf/ndktest/src/main/CPP/libpng/pngrtran.c",
+					"workingDirectory" : "C:/CC/AndroidStudio/Sdf/ndktest/.externalNativeBuild/cmake/debug/mips64"
+				},
+				
+				{
+					"flags" : "  --target=mips64el-none-linux-android --gcc-toolchain=C:/CC/Android-sdk/ndk-bundle/toolchains/mips64el-linux-android-4.9/prebuilt/windows-x86_64 --sysroot=C:/CC/Android-sdk/ndk-bundle/platforms/android-21/arch-mips64 -Dpng_EXPORTS  -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "C:/CC/AndroidStudio/Sdf/ndktest/src/main/CPP/libpng/pngrutil.c",
+					"workingDirectory" : "C:/CC/AndroidStudio/Sdf/ndktest/.externalNativeBuild/cmake/debug/mips64"
+				},
+				
+				{
+					"flags" : "  --target=mips64el-none-linux-android --gcc-toolchain=C:/CC/Android-sdk/ndk-bundle/toolchains/mips64el-linux-android-4.9/prebuilt/windows-x86_64 --sysroot=C:/CC/Android-sdk/ndk-bundle/platforms/android-21/arch-mips64 -Dpng_EXPORTS  -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "C:/CC/AndroidStudio/Sdf/ndktest/src/main/CPP/libpng/pngset.c",
+					"workingDirectory" : "C:/CC/AndroidStudio/Sdf/ndktest/.externalNativeBuild/cmake/debug/mips64"
+				},
+				
+				{
+					"flags" : "  --target=mips64el-none-linux-android --gcc-toolchain=C:/CC/Android-sdk/ndk-bundle/toolchains/mips64el-linux-android-4.9/prebuilt/windows-x86_64 --sysroot=C:/CC/Android-sdk/ndk-bundle/platforms/android-21/arch-mips64 -Dpng_EXPORTS  -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "C:/CC/AndroidStudio/Sdf/ndktest/src/main/CPP/libpng/pngtrans.c",
+					"workingDirectory" : "C:/CC/AndroidStudio/Sdf/ndktest/.externalNativeBuild/cmake/debug/mips64"
+				},
+				
+				{
+					"flags" : "  --target=mips64el-none-linux-android --gcc-toolchain=C:/CC/Android-sdk/ndk-bundle/toolchains/mips64el-linux-android-4.9/prebuilt/windows-x86_64 --sysroot=C:/CC/Android-sdk/ndk-bundle/platforms/android-21/arch-mips64 -Dpng_EXPORTS  -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "C:/CC/AndroidStudio/Sdf/ndktest/src/main/CPP/libpng/pngwio.c",
+					"workingDirectory" : "C:/CC/AndroidStudio/Sdf/ndktest/.externalNativeBuild/cmake/debug/mips64"
+				},
+				
+				{
+					"flags" : "  --target=mips64el-none-linux-android --gcc-toolchain=C:/CC/Android-sdk/ndk-bundle/toolchains/mips64el-linux-android-4.9/prebuilt/windows-x86_64 --sysroot=C:/CC/Android-sdk/ndk-bundle/platforms/android-21/arch-mips64 -Dpng_EXPORTS  -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "C:/CC/AndroidStudio/Sdf/ndktest/src/main/CPP/libpng/pngwrite.c",
+					"workingDirectory" : "C:/CC/AndroidStudio/Sdf/ndktest/.externalNativeBuild/cmake/debug/mips64"
+				},
+				
+				{
+					"flags" : "  --target=mips64el-none-linux-android --gcc-toolchain=C:/CC/Android-sdk/ndk-bundle/toolchains/mips64el-linux-android-4.9/prebuilt/windows-x86_64 --sysroot=C:/CC/Android-sdk/ndk-bundle/platforms/android-21/arch-mips64 -Dpng_EXPORTS  -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "C:/CC/AndroidStudio/Sdf/ndktest/src/main/CPP/libpng/pngwtran.c",
+					"workingDirectory" : "C:/CC/AndroidStudio/Sdf/ndktest/.externalNativeBuild/cmake/debug/mips64"
+				},
+				
+				{
+					"flags" : "  --target=mips64el-none-linux-android --gcc-toolchain=C:/CC/Android-sdk/ndk-bundle/toolchains/mips64el-linux-android-4.9/prebuilt/windows-x86_64 --sysroot=C:/CC/Android-sdk/ndk-bundle/platforms/android-21/arch-mips64 -Dpng_EXPORTS  -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "C:/CC/AndroidStudio/Sdf/ndktest/src/main/CPP/libpng/pngwutil.c",
+					"workingDirectory" : "C:/CC/AndroidStudio/Sdf/ndktest/.externalNativeBuild/cmake/debug/mips64"
+				}
+			],
+			"output" : "C:/CC/AndroidStudio/Sdf/ndktest/build/intermediates/cmake/debug/obj/mips64/libpng.so",
+			"toolchain" : "1580603383"
+		},
+		"qweqwe-Debug-mips64" : 
+		{
+			"abi" : "mips64",
+			"artifactName" : "qweqwe",
+			"buildCommand" : "C:\\CC\\Android-sdk\\cmake\\3.6.3155560\\bin\\cmake.exe --build C:\\CC\\AndroidStudio\\Sdf\\ndktest\\.externalNativeBuild\\cmake\\debug\\mips64 --target qweqwe",
+			"buildType" : "debug",
+			"files" : 
+			[
+				
+				{
+					"flags" : "  --target=mips64el-none-linux-android --gcc-toolchain=C:/CC/Android-sdk/ndk-bundle/toolchains/mips64el-linux-android-4.9/prebuilt/windows-x86_64 --sysroot=C:/CC/Android-sdk/ndk-bundle/platforms/android-21/arch-mips64  -Dqweqwe_EXPORTS -IC:\\CC\\AndroidStudio\\Sdf\\ndktest\\src\\main\\CPP\\libpng -isystem C:\\CC\\Android-sdk\\ndk-bundle\\sources\\cxx-stl\\gnu-libstdc++\\4.9\\include -isystem C:\\CC\\Android-sdk\\ndk-bundle\\sources\\cxx-stl\\gnu-libstdc++\\4.9\\libs\\mips64\\include -isystem C:\\CC\\Android-sdk\\ndk-bundle\\sources\\cxx-stl\\gnu-libstdc++\\4.9\\include\\backward  -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security  -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security   -O0 -fno-limit-debug-info -O0 -fno-limit-debug-info  -fPIC    -c ",
+					"src" : "C:/CC/AndroidStudio/Sdf/ndktest/src/main/CPP/test.cpp",
+					"workingDirectory" : "C:/CC/AndroidStudio/Sdf/ndktest/.externalNativeBuild/cmake/debug/mips64"
+				}
+			],
+			"output" : "C:/CC/AndroidStudio/Sdf/ndktest/build/intermediates/cmake/debug/obj/mips64/libqweqwe.so",
+			"toolchain" : "1580603383"
+		}
+	},
+	"toolchains" : 
+	{
+		"1580603383" : 
+		{
+			"cCompilerExecutable" : "C:/CC/Android-sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/bin/clang.exe",
+			"cppCompilerExecutable" : "C:/CC/Android-sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/bin/clang++.exe"
+		}
+	}
+}

@@ -1,0 +1,6 @@
+C:/CC/AndroidStudio/Sdf/ndktest/.externalNativeBuild/cmake/release/armeabi-v7a/CMakeFiles/qweqwe.dir
+C:/CC/AndroidStudio/Sdf/ndktest/.externalNativeBuild/cmake/release/armeabi-v7a/CMakeFiles/edit_cache.dir
+C:/CC/AndroidStudio/Sdf/ndktest/.externalNativeBuild/cmake/release/armeabi-v7a/CMakeFiles/rebuild_cache.dir
+C:/CC/AndroidStudio/Sdf/ndktest/.externalNativeBuild/cmake/release/armeabi-v7a/libpng/CMakeFiles/png.dir
+C:/CC/AndroidStudio/Sdf/ndktest/.externalNativeBuild/cmake/release/armeabi-v7a/libpng/CMakeFiles/edit_cache.dir
+C:/CC/AndroidStudio/Sdf/ndktest/.externalNativeBuild/cmake/release/armeabi-v7a/libpng/CMakeFiles/rebuild_cache.dir

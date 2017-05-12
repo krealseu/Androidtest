@@ -1,0 +1,6 @@
+C:/CC/AndroidStudio/Sdf/ndktest/.externalNativeBuild/cmake/release/mips/CMakeFiles/qweqwe.dir
+C:/CC/AndroidStudio/Sdf/ndktest/.externalNativeBuild/cmake/release/mips/CMakeFiles/edit_cache.dir
+C:/CC/AndroidStudio/Sdf/ndktest/.externalNativeBuild/cmake/release/mips/CMakeFiles/rebuild_cache.dir
+C:/CC/AndroidStudio/Sdf/ndktest/.externalNativeBuild/cmake/release/mips/libpng/CMakeFiles/png.dir
+C:/CC/AndroidStudio/Sdf/ndktest/.externalNativeBuild/cmake/release/mips/libpng/CMakeFiles/edit_cache.dir
+C:/CC/AndroidStudio/Sdf/ndktest/.externalNativeBuild/cmake/release/mips/libpng/CMakeFiles/rebuild_cache.dir

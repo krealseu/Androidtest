@@ -25,8 +25,9 @@ android {
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
-    testCompile 'junit:junit:4.12'
     compile files('libs/ftpserver-core-1.0.6.jar')
+    compile files('libs/zxing.jar')
     compile 'com.android.support:appcompat-v7:22.2.1'
     compile 'com.android.support:support-v4:22.2.1'
+    testCompile 'junit:junit:4.12'
 }

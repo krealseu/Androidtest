@@ -9,12 +9,15 @@ import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.net.Uri;
 import android.os.Build;
-import android.os.Environment;
 import android.support.v4.app.NotificationCompat;
-import android.support.v4.os.EnvironmentCompat;
-import android.widget.RemoteViews;
+
+import com.google.zxing.BarcodeFormat;
+import com.google.zxing.MultiFormatWriter;
+import com.google.zxing.WriterException;
+import com.google.zxing.common.BitMatrix;
+
+import org.kreal.ftpserver.configure.SharedConfigure;
 
 /**
  * Helper class for showing and canceling ftp
@@ -50,14 +53,20 @@ public class FTPNotification {
 
         // This image is used as the notification's large icon (thumbnail).
         // TODO: Remove this if your notification has no relevant thumbnail.
-        final Bitmap picture = BitmapFactory.decodeResource(res, R.drawable.example_picture);
+        final String info = String.format("ftp://%s:%s@%s:%d",SharedConfigure.getUser(context),SharedConfigure.getPassword(context),exampleString,SharedConfigure.getPort(context));
+        Bitmap picture;
+        try {
+            picture = BitMatrixToBitmap(new MultiFormatWriter().encode(info, BarcodeFormat.QR_CODE, 500, 500));
+        } catch (WriterException e) {
+            e.printStackTrace();
+            picture = BitmapFactory.decodeResource(res, R.drawable.example_picture);
+        }
 
-        final String text = "ftp://"+exampleString+":2121";
         final NotificationCompat.Builder builder = new NotificationCompat.Builder(context)
 
-               // .setDefaults(Notification.DEFAULT_ALL)
+                // .setDefaults(Notification.DEFAULT_ALL)
                 .setSmallIcon(R.drawable.ic_stat_ftp)
-                .setContentText(text)
+                .setContentText(info)
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT)
                 .setLargeIcon(picture)
                 //.setTicker(ticker)
@@ -66,19 +75,19 @@ public class FTPNotification {
                         PendingIntent.getActivity(
                                 context,
                                 0,
-                                new Intent(Intent.ACTION_VIEW, Uri.parse(text)),
+                                ShowFTPserverQR.startQRActivityIntent(context,info),
                                 PendingIntent.FLAG_UPDATE_CURRENT))
                 .setOngoing(true);
-        if(number == 1)
+        if (number == 1)
             builder
-            .setContentTitle("FTP Server Working >>>")
-                .addAction(R.drawable.abc_ic_menu_copy_mtrl_am_alpha, "PAUSE", PendingIntent.getBroadcast(context,0,new Intent(FtpServerAndroid.ACTION_PAUSE_FTPSERVER), PendingIntent.FLAG_UPDATE_CURRENT))
-                .addAction(R.drawable.abc_ic_menu_copy_mtrl_am_alpha,"STOP",PendingIntent.getBroadcast(context,0,new Intent(FtpServerAndroid.ACTION_STOP_FTPSERVER),PendingIntent.FLAG_UPDATE_CURRENT));
-        else if(number == 2)
-            builder
-                .setContentTitle("FTP Serer Paused <<<")
-                .addAction(R.drawable.abc_ic_menu_copy_mtrl_am_alpha, "RESUME", PendingIntent.getBroadcast(context,0,new Intent(FtpServerAndroid.ACTION_RESUME_FTPSERVER), PendingIntent.FLAG_UPDATE_CURRENT))
-                .addAction(R.drawable.abc_ic_menu_copy_mtrl_am_alpha,"STOP",PendingIntent.getBroadcast(context,0,new Intent(FtpServerAndroid.ACTION_STOP_FTPSERVER),PendingIntent.FLAG_UPDATE_CURRENT));
+                    .setContentTitle("FTP Server Working >>>")
+//                    .addAction(R.drawable.abc_ic_menu_copy_mtrl_am_alpha, "PAUSE", PendingIntent.getBroadcast(context, 0, new Intent(FtpServerAndroid.ACTION_PAUSE_FTPSERVER), PendingIntent.FLAG_UPDATE_CURRENT))
+                    .addAction(R.drawable.abc_ic_menu_copy_mtrl_am_alpha, "STOP SERVICE", PendingIntent.getBroadcast(context, 0, new Intent(FtpServerAndroid.ACTION_STOP_FTPSERVER), PendingIntent.FLAG_UPDATE_CURRENT));
+//        else if (number == 2)
+//            builder
+//                    .setContentTitle("FTP Serer Paused <<<")
+//                    .addAction(R.drawable.abc_ic_menu_copy_mtrl_am_alpha, "RESUME", PendingIntent.getBroadcast(context, 0, new Intent(FtpServerAndroid.ACTION_RESUME_FTPSERVER), PendingIntent.FLAG_UPDATE_CURRENT))
+//                    .addAction(R.drawable.abc_ic_menu_copy_mtrl_am_alpha, "STOP", PendingIntent.getBroadcast(context, 0, new Intent(FtpServerAndroid.ACTION_STOP_FTPSERVER), PendingIntent.FLAG_UPDATE_CURRENT));
         else
             builder
                     .setContentTitle("FTP Server Create Failed  >_<")
@@ -110,5 +119,19 @@ public class FTPNotification {
         } else {
             nm.cancel(NOTIFICATION_TAG.hashCode());
         }
+    }
+
+    public static Bitmap BitMatrixToBitmap(BitMatrix bitMatrix) {
+        int width = bitMatrix.getWidth();
+        int height = bitMatrix.getHeight();
+        int[] pixels = new int[width * height];
+        for (int y = 0; y < width; ++y) {
+            for (int x = 0; x < height; ++x) {
+                pixels[y * width + x] = bitMatrix.get(x, y) ? 0xff000000 : 0xffffffff; // black pixel
+            }
+        }
+        Bitmap bmp = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
+        bmp.setPixels(pixels, 0, width, 0, 0, width, height);
+        return bmp;
     }
 }

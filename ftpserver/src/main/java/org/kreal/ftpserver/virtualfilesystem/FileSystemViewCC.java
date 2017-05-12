@@ -1,6 +1,7 @@
 package org.kreal.ftpserver.virtualfilesystem;
 
 import android.content.Context;
+import android.content.UriPermission;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.util.Log;
@@ -12,6 +13,7 @@ import org.apache.ftpserver.ftplet.User;
 import org.kreal.ftpserver.Util.FileUtil;
 
 import java.io.File;
+import java.util.List;
 
 /**
  * Created by lthee on 2016/10/13.
@@ -31,7 +33,9 @@ public class FileSystemViewCC implements FileSystemView {
         userCC.homeDirMap.put("/sdcard",Environment.getExternalStorageDirectory().getAbsolutePath());
 //        userCC.homeDirMap.put("/download",Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).getAbsolutePath());
         Log.i(TAG,user.getHomeDirectory());
-        userCC.homeDirMap.put("/SD卡", FileUtil.getFullPathFromTreeUri(context.getContentResolver().getPersistedUriPermissions().get(0).getUri(),userCC.context));
+        List<UriPermission> permissions = context.getContentResolver().getPersistedUriPermissions();
+        if (permissions.size()>0)
+            userCC.homeDirMap.put("/SD卡", FileUtil.getFullPathFromTreeUri(permissions.get(0).getUri(),userCC.context));
     }
 
     @Override

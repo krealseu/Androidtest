@@ -19,8 +19,8 @@ import java.nio.IntBuffer;
  * Created by Kreal on 2015/9/17.
  */
 public class GLhelp {
-    public static String readfromfile(String path){
-        String fileRoot = Environment.getExternalStorageDirectory().getAbsolutePath() + File.separator+path;
+    public static String readfromfile(String path) {
+        String fileRoot = Environment.getExternalStorageDirectory().getAbsolutePath() + File.separator + path;
         try {
             return read(new FileInputStream(fileRoot));
         } catch (FileNotFoundException e) {
@@ -28,7 +28,8 @@ public class GLhelp {
         }
         return "";
     }
-    public static String readfromAssets(Context context,String path){
+
+    public static String readfromAssets(Context context, String path) {
         try {
             return read(context.getAssets().open(path));
         } catch (IOException e) {
@@ -36,16 +37,17 @@ public class GLhelp {
         }
         return "";
     }
-    private static String read(InputStream in){
+
+    private static String read(InputStream in) {
         StringBuffer out = new StringBuffer();
-        String result=new String();
+        String result = new String();
         byte[] b = new byte[1024];
-        int len=0;
+        int len = 0;
         try {
-            while ((len=in.read(b))!=-1){
-                out.append(new String(b,0,len));
+            while ((len = in.read(b)) != -1) {
+                out.append(new String(b, 0, len));
             }
-            result=out.toString();
+            result = out.toString();
             in.close();
         } catch (IOException e) {
             e.printStackTrace();
@@ -59,7 +61,7 @@ public class GLhelp {
         int vertexShader = loadShader(GLES20.GL_VERTEX_SHADER,
                 vertexSource);
 // Load the fragment shaders
-        int fragmentShader =loadShader(GLES20.GL_FRAGMENT_SHADER,
+        int fragmentShader = loadShader(GLES20.GL_FRAGMENT_SHADER,
                 fragmentSource);
 // Create the program object
         int program = GLES20.glCreateProgram();
@@ -70,10 +72,10 @@ public class GLhelp {
         GLES20.glAttachShader(program, fragmentShader);
 // Link the program
         GLES20.glLinkProgram(program);
-        int[] linked = new int[1];
+        int[] linkStatus = new int[1];
 // Check the link status
-        GLES20.glGetProgramiv(program, GLES20.GL_LINK_STATUS, linked, 0);
-        if (linked[0] == 0) {
+        GLES20.glGetProgramiv(program, GLES20.GL_LINK_STATUS, linkStatus, 0);
+        if (linkStatus[0] == 0) {
             GLES20.glDeleteProgram(program);
             throw new RuntimeException("Error linking program: " +
                     GLES20.glGetProgramInfoLog(program));
@@ -83,6 +85,7 @@ public class GLhelp {
         GLES20.glDeleteShader(fragmentShader);
         return program;
     }
+
     public static int loadShader(int shaderType, String source) {
 
 // Create the shader object
@@ -90,14 +93,14 @@ public class GLhelp {
         if (shader == 0) {
             throw new RuntimeException("Error create shader.");
         }
-        int[] compiled = new int[1];
+        int[] compileStatus = new int[1];
 // Load the shader source
         GLES20.glShaderSource(shader, source);
 // Compile the shader
         GLES20.glCompileShader(shader);
 // Check the compile status
-        GLES20.glGetShaderiv(shader, GLES20.GL_COMPILE_STATUS, compiled, 0);
-        if (compiled[0] == 0) {
+        GLES20.glGetShaderiv(shader, GLES20.GL_COMPILE_STATUS, compileStatus, 0);
+        if (compileStatus[0] == 0) {
             GLES20.glDeleteShader(shader);
             throw new RuntimeException("Error compile shader: " +
                     GLES20.glGetShaderInfoLog(shader));
@@ -122,12 +125,14 @@ public class GLhelp {
                     GLES20.GL_CLAMP_TO_EDGE);
             GLES20.glTexParameteri(GLES20.GL_TEXTURE_2D, GLES20.GL_TEXTURE_WRAP_T,
                     GLES20.GL_CLAMP_TO_EDGE);
-            IntBuffer texBuf = IntBuffer.allocate(1);
-            //GLES20.glGenBuffers(1,texBuf);
+
             //绑定纹理数据,传入指定图片
             GLUtils.texImage2D(GLES20.GL_TEXTURE_2D, 0, bitmap, 0);
-            bitmap.recycle();
+            //防止后面的纹理操作修改其属性
+            GLES20.glBindTexture(GLES20.GL_TEXTURE_2D, 0 );
         }
+        if (texture_ID[0]==0)
+            throw new RuntimeException("Error Loading Textue");
         return texture_ID[0];
     }
 }

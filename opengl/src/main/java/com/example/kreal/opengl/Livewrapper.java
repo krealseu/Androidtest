@@ -19,47 +19,25 @@ public class Livewrapper extends GLWallpaperService {
         return new OpenGLES2Engine();
     }
 
-    class OpenGLES2Engine extends GLWallpaperService.GLEngine {
-        // Check if the system supports OpenGL ES 2.0.
-        private final float TOUCH_SCALE_FACTOR = 180.0f / 640;
-        private float mPreviousX;
-        private float mPreviousY;
-        private LessonOneRenderer myrender;
+    class OpenGLES2Engine extends GLEngine {
         @Override
-        public void onCreate(SurfaceHolder surfaceHolder) {
-            super.onCreate(surfaceHolder);
-
-            // Check if the system supports OpenGL ES 2.0.
-            final ActivityManager activityManager = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
-            final ConfigurationInfo configurationInfo = activityManager.getDeviceConfigurationInfo();
-            final boolean supportsEs2 = configurationInfo.reqGlEsVersion >= 0x20000;
-
-            if (supportsEs2)
-            {
-                // Request an OpenGL ES 2.0 compatible context.
-                setEGLContextClientVersion(2);
-
-                // On Honeycomb+ devices, this improves the performance when
-                // leaving and resuming the live wallpaper.
-                setPreserveEGLContextOnPause(true);
-                myrender=new LessonOneRenderer();
-                // Set the renderer to our user-defined renderer.
-                setRenderer( myrender);
-                glSurfaceView.setRenderMode(GLSurfaceView.RENDERMODE_WHEN_DIRTY);
-
-            }
-            else
-            {
-                // This is where you could create an OpenGL ES 1.x compatible
-                // renderer if you wanted to support both ES 1 and ES 2.
-                return;
-            }
+        GLEngineView onCreateGLEngineView() {
+            return new dd(getApplicationContext());
         }
+        class dd extends GLEngineView{
+            private LessonOneRenderer mRenderer;
 
-        @Override
-        public void onTouchEvent(MotionEvent event) {
-            super.onTouchEvent(event);
-            requestRender();
+            public dd(Context context) {
+                super(context);
+                // Create an OpenGL ES 2.0 context.
+                setEGLContextClientVersion(2);
+                //fix for error No Config chosen, but I don't know what this does.
+                super.setEGLConfigChooser(8 , 8, 8, 8, 16, 0);
+                // Set the Renderer for drawing on the GLSurfaceView
+                mRenderer = new LessonOneRenderer();
+                mRenderer.setMcontext(getContext());
+                setRenderer(mRenderer);
+            }
         }
     }
 }

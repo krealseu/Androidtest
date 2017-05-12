@@ -134,7 +134,6 @@ jint Java_org_kreal_ccffmpeg_ccFFmpeg_loadfile(JNIEnv *env, jobject instance, js
 }
 
 jobject Java_org_kreal_ccffmpeg_ccFFmpeg_getByteBuffer(JNIEnv *env, jobject instance) {
-
     jobject buf = (*env)->NewDirectByteBuffer(env, out_buffer, buffen_len);
     outputBuffer = (*env)->NewGlobalRef(env, buf);
     return outputBuffer;

@@ -21,6 +21,4 @@ android {
 
 dependencies {
     compile 'com.android.support:appcompat-v7:22.2.1'
-    compile files('libs/android-core-3.2.1.jar')
-    compile files('libs/core-3.2.1.jar')
 }

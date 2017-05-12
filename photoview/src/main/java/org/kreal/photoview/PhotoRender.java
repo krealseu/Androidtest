@@ -9,6 +9,8 @@ import android.opengl.GLSurfaceView;
 import android.opengl.GLUtils;
 import android.util.Log;
 
+import java.io.File;
+import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.nio.FloatBuffer;
@@ -29,13 +31,19 @@ public class PhotoRender implements GLSurfaceView.Renderer {
     public void onSurfaceCreated(GL10 gl, EGLConfig config) {
         GLES20.glClearColor(0.5f, 0.5f, 0.5f, 0.5f);
         mPhoto = new Photo();
-        mPhoto.setPhoto("/sdcard/123.png");
+        mPhoto.setPhoto("/sdcard/333.png");
+        File file  = new File("/sdcard/1232.txt");
+        try {
+            file.createNewFile();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
     public void onSurfaceChanged(GL10 gl, int width, int height) {
         GLES20.glViewport(0,0,width,height);
-        mPhoto.setViewRatio(width,height);
+        mPhoto.setViewport(width,height);
     }
 
     @Override

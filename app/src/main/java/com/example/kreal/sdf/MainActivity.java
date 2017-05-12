@@ -19,6 +19,7 @@ import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
+import android.graphics.PixelFormat;
 import android.net.TrafficStats;
 import android.net.Uri;
 import android.net.VpnService;
@@ -38,6 +39,7 @@ import android.util.Log;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.VideoView;
@@ -49,6 +51,10 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
+import static android.view.WindowManager.LayoutParams.FLAG_BLUR_BEHIND;
+import static android.view.WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL;
+import static android.view.WindowManager.LayoutParams.FLAG_SHOW_WALLPAPER;
+
 
 public class MainActivity extends Activity implements View.OnTouchListener {
     ImageView imageView;
@@ -56,11 +62,21 @@ public class MainActivity extends Activity implements View.OnTouchListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        ((Button)findViewById(R.id.button)).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                WindowUtils.showPopupWindow(getApplicationContext());
+//        getWindow().setContentView(WindowUtils.setUpView(getApplicationContext()));
+
+        WindowManager.LayoutParams wmParams = new WindowManager.LayoutParams(
+                WindowManager.LayoutParams.MATCH_PARENT,
+                WindowManager.LayoutParams.MATCH_PARENT,
+                WindowManager.LayoutParams.TYPE_APPLICATION,
+                WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN | FLAG_NOT_TOUCH_MODAL ,
+                PixelFormat.TRANSPARENT);
+        getWindowManager().addView(WindowUtils.setUpView(getApplicationContext()),wmParams);
+//        setContentView(R.layout.activity_main);
+//        ((Button)findViewById(R.id.button)).setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                WindowUtils.showPopupWindow(getApplicationContext());
+//                getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
 //                Intent intent = VpnService.prepare(getApplicationContext());
 //                if (intent != null) {
@@ -68,9 +84,9 @@ public class MainActivity extends Activity implements View.OnTouchListener {
 //                } else {
 //                    onActivityResult(0, RESULT_OK, null);
 //                }
-            }
-        });
-        Log.v("main",""+TrafficStats.getTotalRxBytes());
+//            }
+//        });
+//        Log.v("main",""+TrafficStats.getTotalRxBytes());
     }
 
     @Override

@@ -21,6 +21,9 @@ import android.view.WindowManager.LayoutParams;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import static android.view.WindowManager.LayoutParams.FLAG_BLUR_BEHIND;
+import static android.view.WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL;
+
 /**
  * 弹窗辅助类
  *
@@ -71,11 +74,11 @@ public class WindowUtils {
         params.gravity = Gravity.CENTER;
         WindowManager.LayoutParams wmParams = new WindowManager.LayoutParams(
                 WindowManager.LayoutParams.MATCH_PARENT,
-                2550,
-                WindowManager.LayoutParams.TYPE_SYSTEM_ERROR,
-                WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN | WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE,
+                WindowManager.LayoutParams.MATCH_PARENT,
+                WindowManager.LayoutParams.TYPE_SYSTEM_OVERLAY,
+                LayoutParams.FLAG_LAYOUT_IN_SCREEN|FLAG_BLUR_BEHIND | FLAG_NOT_TOUCH_MODAL ,
                 PixelFormat.TRANSLUCENT);
-        mWindowManager.addView(mView, params);
+        mWindowManager.addView(mView, wmParams);
         Log.i(LOG_TAG, "add view");
     }
     /**
@@ -89,11 +92,11 @@ public class WindowUtils {
             isShown = false;
         }
     }
-    private static View setUpView(final Context context) {
+    public static View setUpView(final Context context) {
         Log.i(LOG_TAG, "setUp view");
         View view = new View(context);
-        view.setAlpha( 0.5f);
-        view.setBackgroundColor(Color.BLUE);
+        view.setAlpha( 0.2f);
+        view.setBackgroundColor(Color.YELLOW);
         // 点击窗口外部区域可消除
         // 这点的实现主要将悬浮窗设置为全屏大小，外层有个透明背景，中间一部分视为内容区域
         // 所以点击内容区域外部视为点击悬浮窗外部

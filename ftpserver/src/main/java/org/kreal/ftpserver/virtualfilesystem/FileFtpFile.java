@@ -189,7 +189,6 @@ public class FileFtpFile implements FtpFileCC {
                     virtualFileStr = virtualFileStr + '/';
                 }
 
-
                 FtpFile[] virtualFiles = new FtpFile[files.length];
 
                 for(int i = 0; i < files.length; ++i) {

@@ -1,0 +1,14 @@
+Executable : C:\CC\Android-sdk\cmake\3.6.3155560\bin\cmake.exe
+arguments : 
+-HC:\CC\AndroidStudio\Sdf\ndktest\src\main\CPP
+-BC:\CC\AndroidStudio\Sdf\ndktest\.externalNativeBuild\cmake\debug\mips
+-GAndroid Gradle - Ninja
+-DANDROID_ABI=mips
+-DANDROID_NDK=C:\CC\Android-sdk\ndk-bundle
+-DCMAKE_LIBRARY_OUTPUT_DIRECTORY=C:\CC\AndroidStudio\Sdf\ndktest\build\intermediates\cmake\debug\obj\mips
+-DCMAKE_BUILD_TYPE=Debug
+-DCMAKE_MAKE_PROGRAM=C:\CC\Android-sdk\cmake\3.6.3155560\bin\ninja.exe
+-DCMAKE_TOOLCHAIN_FILE=C:\CC\Android-sdk\ndk-bundle\build\cmake\android.toolchain.cmake
+-DANDROID_NATIVE_API_LEVEL=21
+jvmArgs : 
+

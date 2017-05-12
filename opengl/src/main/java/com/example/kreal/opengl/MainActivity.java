@@ -22,7 +22,7 @@ public class MainActivity extends Activity {
 
         super.onCreate(savedInstanceState);
         mGLSurfaceView = new MyGLSurfaceView(this);
-//        glSurfaceView=new GLSurfaceView(this);
+        glSurfaceView=new GLSurfaceView(this);
         // Check if the system supports OpenGL ES 2.0.
 //        final ActivityManager activityManager = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
 //        final ConfigurationInfo configurationInfo = activityManager.getDeviceConfigurationInfo();
@@ -32,6 +32,7 @@ public class MainActivity extends Activity {
 //        lessonOneRenderer.setMcontext(getApplicationContext());
 //        glSurfaceView.setRenderer(lessonOneRenderer);
         setContentView(mGLSurfaceView);
+//        glSurfaceView.onPause();
     }
 
     @Override

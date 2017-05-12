@@ -33,7 +33,6 @@
                 <action android:name="org.kreal.FtpServer.ACTION_RESUME_FTPSERVER" />
             </intent-filter>
         </receiver>
-
         <receiver
             android:name=".NotificationReceiver"
             android:enabled="true"
@@ -60,7 +59,15 @@
         <service
             android:name=".FtpServerAndroid"
             android:enabled="true"
-            android:exported="true"></service>
+            android:exported="true" />
+
+        <activity android:name=".ShowFTPserverQR"
+            android:theme="@android:style/Theme.NoDisplay"
+            android:launchMode="singleInstance"
+            android:excludeFromRecents="true">
+
+
+        </activity>
     </application>
 
 </manifest>

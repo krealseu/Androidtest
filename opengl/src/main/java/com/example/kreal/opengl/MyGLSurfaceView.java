@@ -16,6 +16,11 @@ public class MyGLSurfaceView extends GLSurfaceView {
 
     private final LessonOneRenderer mRenderer;
 
+    @Override
+    public void onPause() {
+        super.onPause();
+    }
+
     public MyGLSurfaceView(Context context) {
         super(context);
 
@@ -27,6 +32,7 @@ public class MyGLSurfaceView extends GLSurfaceView {
         mRenderer = new LessonOneRenderer();
         mRenderer.setMcontext(getContext());
         setRenderer(mRenderer);
+
 
         // Render the view only when there is a change in the drawing data
         setRenderMode(GLSurfaceView.RENDERMODE_CONTINUOUSLY);

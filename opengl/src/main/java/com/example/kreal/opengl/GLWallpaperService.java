@@ -1,23 +1,54 @@
 package com.example.kreal.opengl;
 
-/**
- * Created by Kreal on 2015/9/13.
- */
-
-
 import android.content.Context;
 import android.opengl.GLSurfaceView;
-import android.opengl.GLSurfaceView.Renderer;
-import android.os.Build;
 import android.service.wallpaper.WallpaperService;
-import android.util.Log;
+import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 
-public abstract class GLWallpaperService extends WallpaperService {
 
-    public class GLEngine extends Engine {
-        class WallpaperGLSurfaceView extends GLSurfaceView {
-            WallpaperGLSurfaceView(Context context) {
+abstract class GLWallpaperService extends WallpaperService {
+    abstract class GLEngine extends Engine {
+        private GLEngineView mGLEngineView;
+        boolean mHasSurface = false;
+        abstract GLEngineView onCreateGLEngineView();
+        @Override
+        public void onSurfaceCreated(SurfaceHolder holder) {
+            super.onSurfaceCreated(holder);
+            mHasSurface = true;
+            mGLEngineView = onCreateGLEngineView();
+        }
+
+        @Override
+        public void onSurfaceDestroyed(SurfaceHolder holder) {
+            super.onSurfaceDestroyed(holder);
+            mGLEngineView.surfaceDestroyed(holder);
+            mGLEngineView = null;
+            mHasSurface = false;
+        }
+
+        @Override
+        public void onOffsetsChanged(float xOffset, float yOffset, float xOffsetStep, float yOffsetStep, int xPixelOffset, int yPixelOffset) {
+//            super.onOffsetsChanged(xOffset, yOffset, xOffsetStep, yOffsetStep, xPixelOffset, yPixelOffset);
+            mGLEngineView.onOffsetsChanged(xOffset, yOffset, xOffsetStep, yOffsetStep, xPixelOffset, yPixelOffset);
+        }
+
+        @Override
+        public void onVisibilityChanged(boolean visible) {
+//            super.onVisibilityChanged(visible);
+            if (!mHasSurface || mGLEngineView == null)
+                return;
+            mGLEngineView.onVisibilityChanged(visible);
+        }
+
+        @Override
+        public void onTouchEvent(MotionEvent event) {
+            super.onTouchEvent(event);
+//            mGLEngineView.onTouchEvent(event);
+        }
+
+        class GLEngineView extends GLSurfaceView {
+            public GLEngineView(Context context) {
                 super(context);
             }
 
@@ -26,65 +57,13 @@ public abstract class GLWallpaperService extends WallpaperService {
                 return getSurfaceHolder();
             }
 
-            public void onDestroy() {
-                super.onDetachedFromWindow();
+            public void onVisibilityChanged(boolean visible) {
+            }
+
+            public void onOffsetsChanged(float xOffset, float yOffset, float xOffsetStep, float yOffsetStep, int xPixelOffset, int yPixelOffset) {
             }
         }
 
-        public WallpaperGLSurfaceView glSurfaceView;
-        private boolean rendererHasBeenSet;
-
-        @Override
-        public void onCreate(SurfaceHolder surfaceHolder) {
-            super.onCreate(surfaceHolder);
-            glSurfaceView = new WallpaperGLSurfaceView(GLWallpaperService.this);
-        }
-
-        @Override
-        public void onVisibilityChanged(boolean visible) {
-            super.onVisibilityChanged(visible);
-
-            if (rendererHasBeenSet) {
-                if (visible) {
-                    glSurfaceView.onResume();
-                } else {
-                    glSurfaceView.onPause();
-                }
-            }
-        }
-
-        @Override
-        public void onDestroy() {
-            super.onDestroy();
-            glSurfaceView.onDestroy();
-        }
-
-        protected void setRenderer(Renderer renderer) {
-            glSurfaceView.setRenderer(renderer);
-            rendererHasBeenSet = true;
-        }
-
-        protected void setPreserveEGLContextOnPause(boolean preserve) {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
-                glSurfaceView.setPreserveEGLContextOnPause(preserve);
-            }
-        }
-
-        protected void setEGLContextClientVersion(int version) {
-            glSurfaceView.setEGLContextClientVersion(version);
-        }
-        protected void setRenderMode(int renderMode) {
-            glSurfaceView.setRenderMode(renderMode);
-        }
-        protected void requestRender() {
-            glSurfaceView.requestRender();
-        }
-        protected int getHeight() {
-            return glSurfaceView.getHeight();
-        }
-        protected int getWidth() {
-            return glSurfaceView.getWidth();
-        }
     }
 
 }

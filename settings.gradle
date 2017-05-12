@@ -1,3 +1,4 @@
-include ':app', ':opengl', ':vpn', ':senser', ':wallpaper', ':akvideoplayer', ':videotest', ':mt', ':picasso', ':ftpserver', ':photoview'
+include ':app', ':opengl', ':vpn', ':senser', ':wallpaper', ':akvideoplayer', ':videotest', ':mt', ':picasso', ':ftpserver', ':photoview', ':ndktest'
 include ':swiFTPLib'
 include ':aFileChooser'
+include ':android-dd'
